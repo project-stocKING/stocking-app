@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'rails_admin'
 
 
 # Use ActiveModel has_secure_password

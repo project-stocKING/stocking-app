@@ -27,6 +27,19 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#services">SERVICES</a></li>
+
+
+        <% if current_user %>
+          <% if current_user.admin == true %>
+            <li><%= link_to "ADMIN PANEL", '/admin', method: :get %></li>
+          <% end %>
+
+          <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+          <li><%= link_to "LOG IN", new_user_session_path, method: :get %></li>
+
+        <% end %>
+
       </ul>
     </div>
   </div>
