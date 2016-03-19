@@ -5,6 +5,10 @@ $verylightgray: #888888;
 $lightgray: #D3D3D3;
 $darkgray: #222;
 $black: #000;
+$primary-color: #003D6F;
+/*$primary-color: steelblue*/;
+
+$navbar-height: 50px;
 
 
 h2 {
@@ -27,11 +31,12 @@ body {
     font: 400 15px Lato, sans-serif !important;
     line-height: 1.8 !important;
     color: #818181 !important;
+    margin-top: $navbar-height;
 }
 
 .jumbotron { 
  		font-family: Montserrat, sans-serif !important;
-    background-color: steelblue !important;
+    background-color: $primary-color !important;
     color: #ffffff !important;
     padding: 100px 25px !important;
 }
@@ -45,12 +50,12 @@ body {
 }
 
 .logo-small {
-    color: steelblue !important;
+    color: $primary-color !important;
     font-size: 50px !important;
 }
 
 .logo {
-    color: steelblue !important;
+    color: $primary-color !important;
     font-size: 200px !important;
 }
 
@@ -63,15 +68,15 @@ body {
 
 .carousel-control.right, .carousel-control.left {
     background-image: none !important;
-    color: steelblue !important;
+    color: $primary-color !important;
 }
 
 .carousel-indicators li {
-    border-color: steelblue !important;
+    border-color: $primary-color !important;
 }
 
 .carousel-indicators li.active {
-    background-color: steelblue !important;
+    background-color: $primary-color !important;
 }
 
 .item h4 {
@@ -89,7 +94,7 @@ body {
 .navbar {
 		font-family: Montserrat, sans-serif !important;
     margin-bottom: 0 !important;
-    background-color: steelblue !important;
+    background-color: $primary-color !important;
     z-index: 9999 !important;
     border: 0 !important;
     font-size: 12px !important;
@@ -103,7 +108,7 @@ body {
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color:steelblue !important;
+    color:$primary-color !important;
     background-color: #fff !important;
 }
 
@@ -115,7 +120,7 @@ body {
 footer .glyphicon {
     font-size: 20px !important;
     margin-bottom: 20px !important;
-    color: steelblue !important;
+    color: $primary-color !important;
 }
 
 
@@ -151,4 +156,27 @@ footer .glyphicon {
         opacity: 1;
         -webkit-transform: translateY(0%);
     }
+}
+
+.wrapper {
+    margin: 70px auto;
+    width: 70vw;
+
+}
+
+.login-box {
+    text-align: center;
+
+    & > div {
+        display: inline-block;
+    }
+
+    div:first-child {
+        margin-right: 150px;
+    }
+}
+
+.button-field {
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
 }
