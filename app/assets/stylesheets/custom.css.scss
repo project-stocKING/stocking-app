@@ -107,6 +107,7 @@ body {
 
 .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
+    transition: .3s all;
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
@@ -275,6 +276,17 @@ footer .glyphicon {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
+.user-content {
+    /*text-align: center;*/
+    /*display: none;*/
+    margin-left: 300px;
+    transition: .3s all;
+    /*position: absolute;*/
+}
+
+.user-content.companies {
+    display: inline-block;
+}
 
 .general-list {
 /*    width: 100%;
@@ -283,7 +295,7 @@ footer .glyphicon {
     /*background-color: $primary-color;*/
     background-image: url(asset-path("stock-background-slim.jpg"));
     padding: 0;
-    display: flex;
+    display: inline-block;
     position: fixed;
     width: 300px;
     left: 0;
@@ -308,11 +320,13 @@ footer .glyphicon {
         height: 50px; 
         list-style-type: none;
         line-height: 50px;
+        cursor: pointer;
+        transition: .3s all;
         /*display: flex;*/
         /*text-align: center;*/
 
     }
-    li:hover {
+    li:hover, li.active {
         background-color: white;
         color: $primary-color;
     }
