@@ -92,11 +92,9 @@ body {
 }
 
 .navbar {
-		font-family: Montserrat, sans-serif !important;
+	font-family: Montserrat, sans-serif !important;
     margin-bottom: 0 !important;
-    /*background-color: $primary-color !important;*/
     background-image: url(asset-path("stock-background.jpg"));
-    /*opacity: 0;*/
     z-index: 9999 !important;
     border: 0 !important;
     font-size: 12px !important;

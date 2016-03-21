@@ -37,9 +37,32 @@ $(document).ready(function() {
     console.log(idx);
     $(".user-content").hide();
     $(".user-content:nth-child("+(idx+2)+")").show();
-
-
   });
+
+  if(document.getElementById("title")===null) {
+    document.getElementById("aboutTab").style.display = "none";
+    document.getElementById("servicesTab").style.display = "none";
+    console.log("on other page");
+  }else {
+    console.log("on main page")
+    document.getElementById("aboutTab").style.display = "inline";
+    document.getElementById("servicesTab").style.display = "inline";
+  }
+
+  window.onscroll = function(ev) {
+    if(document.getElementById("title")===null) return;
+
+    if (window.scrollY >= 50) {
+      document.getElementById("myNavbar").style.backgroundColor = "#003D6F";
+      document.getElementById("myNavbar").style.backgroundImage = "none";
+      console.log("window scrolled");
+    } else {
+      console.log("returned to top");
+      document.getElementById("myNavbar").style.background = "none";
+    }
+  };
+
+
 
 });
 
@@ -91,30 +114,4 @@ window.onclick = function(event) {
       }
     }
   }
-}
-
-// $(".general-list li").on('click', function(event) {
-
-// });
-
-
-// $(document).on('click', ".general-list ul li", function(event) {
-
-//   console.log("clicked item");
-
-
-//   if(this === document.getElementById("account_details_button")) {
-//    document.getElementById("account_details").style.display = "inline-block";
-//    document.getElementById("companies_details").style.display = "none";
-//    document.getElementById("strategies_details").style.display = "none";
-//   } else if (this === document.getElementById("companies_details_button")) {
-//     document.getElementById("account_details").style.display = "none";
-//     document.getElementById("companies_details").style.display = "inline-block";
-//     document.getElementById("strategies_details").style.display = "none";
-//   } else if (this === document.getElementById("strategies_details_button")) {
-//     document.getElementById("account_details").style.display = "none";
-//     document.getElementById("companies_details").style.display = "none";
-//     document.getElementById("strategies_details").style.display = "inline-block";
-//   }
-
-// });
+};
