@@ -41,6 +41,22 @@ $(document).ready(function() {
 
   });
 
+  window.onscroll = function(ev) {
+
+    if(document.getElementById("title")===null) return;
+
+    if (window.scrollY >= 50) {
+      document.getElementById("myNavbar").style.backgroundColor = "#003D6F";
+      document.getElementById("myNavbar").style.backgroundImage = "none";
+      console.log("window scrolled");
+    } else {
+      console.log("returned to top");
+      document.getElementById("myNavbar").style.background = "none";
+    }
+  };
+
+
+
 });
 
 $(document).on('click', ".navbar a:not('#logo'), footer a[href='#myPage']", function(event) {
@@ -91,30 +107,4 @@ window.onclick = function(event) {
       }
     }
   }
-}
-
-// $(".general-list li").on('click', function(event) {
-
-// });
-
-
-// $(document).on('click', ".general-list ul li", function(event) {
-
-//   console.log("clicked item");
-
-
-//   if(this === document.getElementById("account_details_button")) {
-//    document.getElementById("account_details").style.display = "inline-block";
-//    document.getElementById("companies_details").style.display = "none";
-//    document.getElementById("strategies_details").style.display = "none";
-//   } else if (this === document.getElementById("companies_details_button")) {
-//     document.getElementById("account_details").style.display = "none";
-//     document.getElementById("companies_details").style.display = "inline-block";
-//     document.getElementById("strategies_details").style.display = "none";
-//   } else if (this === document.getElementById("strategies_details_button")) {
-//     document.getElementById("account_details").style.display = "none";
-//     document.getElementById("companies_details").style.display = "none";
-//     document.getElementById("strategies_details").style.display = "inline-block";
-//   }
-
-// });
+};

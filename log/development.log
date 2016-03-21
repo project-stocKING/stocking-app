@@ -39472,3 +39472,1669 @@ Processing by WelcomeController#index as HTML
   Rendered layouts/_header.html.erb (1.2ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:39:55 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 166ms (Views: 165.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:39:55 +0100
+
+
+Started GET "/assets/application-37d8920bccb2c86e12bc7bdbdebe710395b27db46891c4f3b215fd846d1def5c.js" for 127.0.0.1 at 2016-03-21 01:39:55 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:39:56 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:41:01 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 197ms (Views: 196.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:41:02 +0100
+
+
+Started GET "/assets/application-06f09d4ec3fbb17df8a337873fff3a978351c767a00d232791fef0d021b02f64.js" for 127.0.0.1 at 2016-03-21 01:41:02 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:41:03 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:41:16 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 175ms (Views: 174.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-f59c1f80366928e38ccae692cd7a65080dc3dd88a3f62ba6576b2b6b0884fb7e.js" for 127.0.0.1 at 2016-03-21 01:41:16 +0100
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:41:16 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:41:16 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 01:41:30 +0100
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"CcUwUv1pqDwm/2hTtxnYcQsImCHrvkZ142lnQ25KpneAlwDjxY/g/bzcGqC0qnLF7MHEa0bVFXj70kG3y7BdXQ=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 01:43:24 +0100
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 189ms (Views: 187.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:43:25 +0100
+
+
+Started GET "/assets/application-6ec8cf5da6e09948dbe652fcac2e069ead56452101a4cfd67a1433e3f9ce642f.js" for 127.0.0.1 at 2016-03-21 01:43:25 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:43:25 +0100
+
+
+Started GET "/assets/stock-background-slim-4cedba6f20b98adfea57075cff9084ec0a6185e4e83804506ad7000c52138879.jpg" for 127.0.0.1 at 2016-03-21 01:43:25 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 01:43:42 +0100
+Processing by RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 196ms (Views: 194.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:43:42 +0100
+
+
+Started GET "/assets/application-b60562511c010e3cd000855fa0408e0fe84ef876dbaae76a0c23c1b604df8e40.js" for 127.0.0.1 at 2016-03-21 01:43:42 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:43:44 +0100
+
+
+Started GET "/assets/stock-background-slim-4cedba6f20b98adfea57075cff9084ec0a6185e4e83804506ad7000c52138879.jpg" for 127.0.0.1 at 2016-03-21 01:43:44 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 01:45:18 +0100
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 240ms (Views: 238.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-9e391f000dc583682f0478d4bccfa112974db3ab99f5cddd9c420290672288eb.js" for 127.0.0.1 at 2016-03-21 01:45:19 +0100
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:45:19 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:45:19 +0100
+
+
+Started GET "/assets/stock-background-slim-4cedba6f20b98adfea57075cff9084ec0a6185e4e83804506ad7000c52138879.jpg" for 127.0.0.1 at 2016-03-21 01:45:19 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 01:46:20 +0100
+Processing by RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 198ms (Views: 196.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:46:21 +0100
+
+
+Started GET "/assets/application-a303242caab749abe6cd2dd9df1326b155f211b92d7c7bb804525b23db7effbf.js" for 127.0.0.1 at 2016-03-21 01:46:21 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:46:21 +0100
+
+
+Started GET "/assets/stock-background-slim-4cedba6f20b98adfea57075cff9084ec0a6185e4e83804506ad7000c52138879.jpg" for 127.0.0.1 at 2016-03-21 01:46:21 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 01:47:02 +0100
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 206ms (Views: 204.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:47:03 +0100
+
+
+Started GET "/assets/application-a7744eb0002890bc331bab66d9467344343d7a86b3bd540f22849b1f9c6f2e77.js" for 127.0.0.1 at 2016-03-21 01:47:03 +0100
+
+
+Started GET "/assets/stock-background-slim-4cedba6f20b98adfea57075cff9084ec0a6185e4e83804506ad7000c52138879.jpg" for 127.0.0.1 at 2016-03-21 01:47:03 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:47:03 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 01:49:19 +0100
+Processing by RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 194ms (Views: 191.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:49:19 +0100
+
+
+Started GET "/assets/application-74f088e5fc0be9a693b833cf3810c738054b74229409439f60b15d7983bb69e6.js" for 127.0.0.1 at 2016-03-21 01:49:20 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:49:21 +0100
+
+
+Started GET "/assets/stock-background-slim-4cedba6f20b98adfea57075cff9084ec0a6185e4e83804506ad7000c52138879.jpg" for 127.0.0.1 at 2016-03-21 01:49:21 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:49:33 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 31ms (Views: 30.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:50:05 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 193ms (Views: 192.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:50:05 +0100
+
+
+Started GET "/assets/application-924f1c15311fbcddf6861a480e08cbefbe8e27d47f4bd7c4782eda2f2026c4b0.js" for 127.0.0.1 at 2016-03-21 01:50:05 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:50:06 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:50:42 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 187ms (Views: 186.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:50:42 +0100
+
+
+Started GET "/assets/application-1cc5071086cf1275426d59c0a8d67d9de1e1dd88506d36171ff905c2489da96d.js" for 127.0.0.1 at 2016-03-21 01:50:42 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:50:43 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:50:49 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:50:49 +0100
+
+
+Started GET "/assets/application-1cc5071086cf1275426d59c0a8d67d9de1e1dd88506d36171ff905c2489da96d.js" for 127.0.0.1 at 2016-03-21 01:50:49 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:50:49 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:52:53 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 289ms (Views: 288.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:52:54 +0100
+
+
+Started GET "/assets/application-d76def7e89d7dd134ed061185ada19187cdd51e198ac258eb34cec100ccf4e25.js" for 127.0.0.1 at 2016-03-21 01:52:54 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:52:54 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:53:02 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 167ms (Views: 166.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:53:02 +0100
+
+
+Started GET "/assets/application-3c56dfe95996e3637c6158fdab7fe8520751967142c31ed01519eb66be01c522.js" for 127.0.0.1 at 2016-03-21 01:53:02 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:53:02 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:53:16 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 205ms (Views: 204.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:53:16 +0100
+
+
+Started GET "/assets/application-22ddf17ed259a0014ee92dfc32c2c921faf241a229d60e5153a178f2da0a4733.js" for 127.0.0.1 at 2016-03-21 01:53:16 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:53:17 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:53:27 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 180ms (Views: 179.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:53:27 +0100
+
+
+Started GET "/assets/application-4dcab61666c1e5a92cb60ad4423b171b8b98486be040a4dcef3cd984f7e0b3ba.js" for 127.0.0.1 at 2016-03-21 01:53:27 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:53:28 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:53:38 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-3c56dfe95996e3637c6158fdab7fe8520751967142c31ed01519eb66be01c522.js" for 127.0.0.1 at 2016-03-21 01:53:38 +0100
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:53:38 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:53:38 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:54:03 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 185ms (Views: 184.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:54:03 +0100
+
+
+Started GET "/assets/application-70f6b129089bb4611d892dac78517201adea55b4a3c0de960d790cccc1580146.js" for 127.0.0.1 at 2016-03-21 01:54:03 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:54:04 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:55:58 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 167ms (Views: 166.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:55:58 +0100
+
+
+Started GET "/assets/application-bd3b407d13f13052ef9c9a9841b1aad2130857501fad66b6f6c3efcc68a47a18.js" for 127.0.0.1 at 2016-03-21 01:55:58 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:55:59 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:56:31 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 195ms (Views: 193.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:56:32 +0100
+
+
+Started GET "/assets/application-b266d201bead7517e6e1bb7f66bd9e244c914102af64e520b2a5831b88f6b576.js" for 127.0.0.1 at 2016-03-21 01:56:32 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:56:32 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:56:54 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 187ms (Views: 186.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:56:55 +0100
+
+
+Started GET "/assets/application-a1c693ee294e0df64aa5c7f2316edbad2e6ecbf1748c3790cac39041354a7527.js" for 127.0.0.1 at 2016-03-21 01:56:55 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:56:55 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:57:35 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 176ms (Views: 175.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:57:35 +0100
+
+
+Started GET "/assets/application-c001ebba4d357d06ce4729c369581bc143de2d45abfdec5d2b07e6e0696081a2.js" for 127.0.0.1 at 2016-03-21 01:57:35 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:57:35 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:57:57 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:57:57 +0100
+
+
+Started GET "/assets/application-c001ebba4d357d06ce4729c369581bc143de2d45abfdec5d2b07e6e0696081a2.js" for 127.0.0.1 at 2016-03-21 01:57:57 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:57:57 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:58:00 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:58:00 +0100
+
+
+Started GET "/assets/application-c001ebba4d357d06ce4729c369581bc143de2d45abfdec5d2b07e6e0696081a2.js" for 127.0.0.1 at 2016-03-21 01:58:00 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:58:01 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:59:02 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 176ms (Views: 175.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:59:02 +0100
+
+
+Started GET "/assets/application-5f409b2b61d062635a6a24350170a7f14c23bba9d8b516d8946fbafcc93b105d.js" for 127.0.0.1 at 2016-03-21 01:59:02 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:59:03 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:59:35 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 169ms (Views: 168.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:59:36 +0100
+
+
+Started GET "/assets/application-fb615494f629ae14d6f694b7362017740829dba2875d678fef76acb47e7a5dc6.js" for 127.0.0.1 at 2016-03-21 01:59:36 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:59:36 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 01:59:52 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 189ms (Views: 188.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 01:59:52 +0100
+
+
+Started GET "/assets/application-23bbec43a54b11016eedf4562ee61d73c368c33e7ce65fbdfecb1cf2dd804d5b.js" for 127.0.0.1 at 2016-03-21 01:59:52 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 01:59:52 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:00:00 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 02:00:01 +0100
+
+
+Started GET "/assets/application-23bbec43a54b11016eedf4562ee61d73c368c33e7ce65fbdfecb1cf2dd804d5b.js" for 127.0.0.1 at 2016-03-21 02:00:01 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:00:01 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:00:40 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 184ms (Views: 183.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 02:00:41 +0100
+
+
+Started GET "/assets/application-db8eb477660176e46d31dbad0344cd91c08b512a133fbe2c3863cfc8cce5ca0c.js" for 127.0.0.1 at 2016-03-21 02:00:41 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:00:41 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:00:56 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 180ms (Views: 179.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 02:00:56 +0100
+
+
+Started GET "/assets/application-fe3ccd6542b45587401119a92ec5b3236adc8f96f4f70bb130e4cff472f79881.js" for 127.0.0.1 at 2016-03-21 02:00:56 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:00:57 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:01:32 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 194ms (Views: 192.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 02:01:33 +0100
+
+
+Started GET "/assets/application-e34ac8f68307fa00cd87c702c8e7b00a0c5c031f554a339a5e9c75a7c4883d6b.js" for 127.0.0.1 at 2016-03-21 02:01:33 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:01:33 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:01:46 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 173ms (Views: 172.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 02:01:47 +0100
+
+
+Started GET "/assets/application-da8b7d553bc6cf17f562966cae86aecb2ce5e2c30dcb187dbce4ca18e9f50fa3.js" for 127.0.0.1 at 2016-03-21 02:01:47 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:01:47 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:01:59 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 286ms (Views: 285.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-05cd6c09f01484c2f06853a9f82f9d3fa9df556bd861bb54a84383c44602e436.js" for 127.0.0.1 at 2016-03-21 02:01:59 +0100
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 02:01:59 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:02:00 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:03:08 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 172ms (Views: 171.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 02:03:09 +0100
+
+
+Started GET "/assets/application-06c0ed5c953c60ef2de37c1f273174caf1d4484a3baa43e416e124f6bd80931d.js" for 127.0.0.1 at 2016-03-21 02:03:09 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:03:09 +0100
+
+
+Started GET "/images/stock-background.jpg" for 127.0.0.1 at 2016-03-21 02:03:10 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/stock-background.jpg"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.5ms)
+
+
+Started GET "/images/stock-background.jpg" for 127.0.0.1 at 2016-03-21 02:03:13 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/stock-background.jpg"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (38.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:05:06 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 183ms (Views: 182.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 02:05:06 +0100
+
+
+Started GET "/assets/application-2a5160d14d283e313e47b03c2554ce6679d52340f79fa6173917e47ed211fd78.js" for 127.0.0.1 at 2016-03-21 02:05:06 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:05:07 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 02:06:02 +0100
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"Y9Q8xN2Hhkn1NU1kbZdJTWdu9154DAy/4tlcxsspRHHqhgx15WHOiG8WP5duJOP5gKerFNVnX7L6YnoybtO/Ww=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:06:10 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:06:39 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 175ms (Views: 174.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-0ee817464bb8cf9155f89e6fe1b669b111f9293a3b67c2f9c1f541f2f200c93c.css" for 127.0.0.1 at 2016-03-21 02:06:40 +0100
+
+
+Started GET "/assets/application-318c74866575fe1df26fed5740bd058a8883ec52b33d58f7f1a298c1daaec283.js" for 127.0.0.1 at 2016-03-21 02:06:40 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:06:41 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 02:06:54 +0100
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"f5aHS2SS0ctOWzUz+RkEZLkYZMSOBFlh700649E2sGH2xLf6XHSZCtR4R8D6qq7QXtE4jiNvCmz39hwXdMxLSw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:06:56 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:07:46 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5167ms (Views: 5167.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:07:52 +0100
+
+
+Started GET "/assets/application-4d22f7d76c9ca7475821ceeb475b2df8cab11183a65344944b7b28470193eb57.js" for 127.0.0.1 at 2016-03-21 02:07:52 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:07:52 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:08:12 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 181ms (Views: 180.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:08:12 +0100
+
+
+Started GET "/assets/application-765853dbe59cc1f64a91d621c4b5fb6f868b4689e9e9b7e79ba70849084ee0f9.js" for 127.0.0.1 at 2016-03-21 02:08:12 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:08:12 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:08:30 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:08:31 +0100
+
+
+Started GET "/assets/application-4d22f7d76c9ca7475821ceeb475b2df8cab11183a65344944b7b28470193eb57.js" for 127.0.0.1 at 2016-03-21 02:08:31 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:08:31 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:09:45 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:09:45 +0100
+
+
+Started GET "/assets/application-4d22f7d76c9ca7475821ceeb475b2df8cab11183a65344944b7b28470193eb57.js" for 127.0.0.1 at 2016-03-21 02:09:45 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:09:45 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:09:54 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:09:54 +0100
+
+
+Started GET "/assets/application-4d22f7d76c9ca7475821ceeb475b2df8cab11183a65344944b7b28470193eb57.js" for 127.0.0.1 at 2016-03-21 02:09:54 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:09:54 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:10:12 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 02:12:32 +0100
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"3utTBdF5jvCUXf6WCYm/6Jd3pscXsukv1V6n3tX7S6FXuWO06Z/GMQ5+jGUKOhVccL76jbrZuiLN5YEqcAGwiw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:14:19 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 177ms (Views: 176.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:14:20 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-27de5aceb035c1372cc06e53d54de542fc8ae240c08c235c7eb3941f0b73c1ea.js" for 127.0.0.1 at 2016-03-21 02:14:20 +0100
+
+
+Started GET "/app/assets/images/stock-background.jpg" for 127.0.0.1 at 2016-03-21 02:14:21 +0100
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/stock-background.jpg"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.6ms)
+
+
+Started GET "/app/assets/images/stock-background.jpg" for 127.0.0.1 at 2016-03-21 02:14:26 +0100
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/stock-background.jpg"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (38.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:14:32 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/app/assets/images/stock-background.jpg" for 127.0.0.1 at 2016-03-21 02:14:34 +0100
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/stock-background.jpg"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:16:05 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 192ms (Views: 191.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:16:06 +0100
+
+
+Started GET "/assets/application-24bd1d22e8ef96b7d520c2339dfc14bb040749612812bb2caed8c9030fca1570.js" for 127.0.0.1 at 2016-03-21 02:16:06 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:16:07 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:16:47 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 191ms (Views: 190.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:16:47 +0100
+
+
+Started GET "/assets/application-95f3dca737542c4a0389b0926a7d0d58f13f393cd8f09b79e939f8800c50170f.js" for 127.0.0.1 at 2016-03-21 02:16:47 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:16:48 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:17:57 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 175ms (Views: 174.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:17:58 +0100
+
+
+Started GET "/assets/application-0687f51ca59e241a6fc14168321159d10a8c494730ba3652fdbdd9c716e15d81.js" for 127.0.0.1 at 2016-03-21 02:17:58 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:17:58 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:18:40 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 199ms (Views: 198.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-4881e461ca87f36f45d1e9d901b33341700a15607ffffac12ece0a64ca7b7ed2.js" for 127.0.0.1 at 2016-03-21 02:18:41 +0100
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:18:41 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:18:41 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:20:23 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:20:23 +0100
+
+
+Started GET "/assets/application-95f3dca737542c4a0389b0926a7d0d58f13f393cd8f09b79e939f8800c50170f.js" for 127.0.0.1 at 2016-03-21 02:20:23 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:20:24 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:23:37 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 186ms (Views: 185.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:23:37 +0100
+
+
+Started GET "/assets/application-6fbb71e04d90ca3e4072ab81684b0a7132e2ba3e7c3f6dca2ad907208e11d1a7.js" for 127.0.0.1 at 2016-03-21 02:23:37 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:23:38 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:23:55 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 230ms (Views: 229.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:23:55 +0100
+
+
+Started GET "/assets/application-9f03607608b230bfb60514254526171f36340790c2c7fbb84385c751ba4304a6.js" for 127.0.0.1 at 2016-03-21 02:23:56 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:23:56 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:24:08 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 173ms (Views: 172.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:24:08 +0100
+
+
+Started GET "/assets/application-f268153ffe0ec57eb5e07ea2e9b98276924a65eaa34a678a65b26b21779d4be5.js" for 127.0.0.1 at 2016-03-21 02:24:08 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:24:09 +0100
+
+
+Started GET "/path" for 127.0.0.1 at 2016-03-21 02:24:10 +0100
+
+ActionController::RoutingError (No route matches [GET] "/path"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.3ms)
+
+
+Started GET "/path" for 127.0.0.1 at 2016-03-21 02:24:14 +0100
+
+ActionController::RoutingError (No route matches [GET] "/path"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (39.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:24:17 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-f268153ffe0ec57eb5e07ea2e9b98276924a65eaa34a678a65b26b21779d4be5.js" for 127.0.0.1 at 2016-03-21 02:24:18 +0100
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:24:18 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:24:18 +0100
+
+
+Started GET "/path" for 127.0.0.1 at 2016-03-21 02:24:22 +0100
+
+ActionController::RoutingError (No route matches [GET] "/path"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:25:00 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 206ms (Views: 205.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:25:00 +0100
+
+
+Started GET "/assets/application-16c324c6e2b69198b7bc33c2e31243d2071549c227fbf92792fdfcc3a76d4fd9.js" for 127.0.0.1 at 2016-03-21 02:25:00 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:25:00 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 02:25:16 +0100
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"gkkMcHGTdISCVvjmzeVpo4fHrMRTZYw98svYukoiFb0LGzzBSXU8RRh1ihXOVsMXYA7wjv4O3zDqcP5O79julw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 02:25:26 +0100
+Processing by RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-16c324c6e2b69198b7bc33c2e31243d2071549c227fbf92792fdfcc3a76d4fd9.js" for 127.0.0.1 at 2016-03-21 02:25:26 +0100
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:25:26 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:25:26 +0100
+
+
+Started GET "/assets/stock-background-slim-4cedba6f20b98adfea57075cff9084ec0a6185e4e83804506ad7000c52138879.jpg" for 127.0.0.1 at 2016-03-21 02:25:26 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:25:28 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:27:09 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-16c324c6e2b69198b7bc33c2e31243d2071549c227fbf92792fdfcc3a76d4fd9.js" for 127.0.0.1 at 2016-03-21 02:27:09 +0100
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:27:09 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:27:10 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:28:30 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 187ms (Views: 186.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-1216559825e48d8d2c10948b691933a61955d8ea692f4ceffbbda69f0a751679.css" for 127.0.0.1 at 2016-03-21 02:28:31 +0100
+
+
+Started GET "/assets/application-1584b862159fa2ad6486a6eb166b05b6d9296170c8d237d317a29bab273dd251.js" for 127.0.0.1 at 2016-03-21 02:28:31 +0100
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-03-21 02:28:31 +0100
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-03-21 02:28:31 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 02:28:35 +0100
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"o3AEukqueWPyHZiad5SVX9jkv8GmobrgQT9jMTf8OYEqIjQLckgxomg+6ml0Jz/rPy3jiwvK6e1ZhEXFkgbCqw=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:28:40 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 02:28:48 +0100
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"Llx85KBHy1AYO5nVQPB2bNVsk786MhMDGpD/MdgXDHSnDkxVmKGDkYIY6yZDQ9zYMqXP9ZdZQA4CK9nFfe33Xg=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:28:51 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:29:17 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 298ms (Views: 297.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:29:17 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-8a7db4d4af33d5ae949801fedfd28e87986c11b00a3ae3a5562c50dbe1fa5a4e.js" for 127.0.0.1 at 2016-03-21 02:29:17 +0100
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-21 02:29:24 +0100
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"/G83YEwOHQ8SXYrduZn0FOAckLTyzse/kTTv4XiANuJ1PQfRdOhVzoh++C66Kl6gB9XM/l+llLKJj8kV3XrNyA=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-21 02:29:26 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.1ms)
