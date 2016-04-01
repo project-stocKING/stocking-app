@@ -21,23 +21,8 @@
 
 $(document).ready(function() {
 
-  $(".user-content").hide();
-  $(".user-content:first").show();
-
-  // $(".user-content:first").css("display", "inline-block");
-
-  $(".general-list li").removeClass('active');
-  $(".general-list li:first-child").addClass('active');
-
-  $(".general-list li").on('click', function(event) {
-    $(".general-list li").removeClass('active');
-    $(this).addClass('active');
-    var idx = $(this).index();
-
-    console.log(idx);
-    $(".user-content").hide();
-    $(".user-content:nth-child("+(idx+2)+")").show();
-  });
+  userContentBehavior();
+  welcomeContentBehavior();
 
   if(document.getElementById("title")===null) {
     document.getElementById("aboutTab").style.display = "none";
@@ -62,9 +47,41 @@ $(document).ready(function() {
     }
   };
 
-
-
 });
+
+var welcomeContentBehavior = function() {
+  $(".container-primary").hide();
+  $(".container-primary:first").show();
+
+  $(".section-wrapper").on('click', function(event) {
+    console.log("clicked on logo");
+    var idx = $(this).attr("index");
+    console.log("CLICKED:", idx);
+
+    $(".container-primary").hide();
+    $(".container-primary").eq(idx).show();
+  });
+}
+
+var userContentBehavior = function() {
+  $(".user-content").hide();
+  $(".user-content:first").show();
+
+  // $(".user-content:first").css("display", "inline-block");
+
+  $(".general-list li").removeClass('active');
+  $(".general-list li:first-child").addClass('active');
+
+  $(".general-list li").on('click', function(event) {
+    $(".general-list li").removeClass('active');
+    $(this).addClass('active');
+    var idx = $(this).index();
+
+    console.log(idx);
+    $(".user-content").hide();
+    $(".user-content:nth-child("+(idx+2)+")").show();
+  });
+}
 
 $(document).on('click', ".navbar a:not('#logo'), footer a[href='#myPage']", function(event) {
     // Prevent default anchor click behavior
