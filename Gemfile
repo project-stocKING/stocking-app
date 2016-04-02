@@ -29,6 +29,7 @@ gem 'devise'
 gem 'rails_admin'
 
 gem 'react-rails', '~> 1.0'
+gem 'rails-jpages'
 
 
 # Use ActiveModel has_secure_password

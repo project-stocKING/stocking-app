@@ -18,10 +18,16 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+//assuming this comes from an ajax call
+
+var usersContent = [];
+var perPage = 20;
+var currentPage = 0;
 
 $(document).ready(function() {
 
   userContentBehavior();
+  // tileBehavior();
   welcomeContentBehavior();
 
   if(document.getElementById("title")===null) {
@@ -49,6 +55,57 @@ $(document).ready(function() {
 
 });
 
+var tileBehavior = function() {
+  console.log("in tile behavior");
+  $(".tile").on('click', function(event) {
+    // console.log("clicked on tile");
+    $(".tile").removeClass('active');
+    $(this).addClass('active');
+
+    var tileIndex = currentPage*perPage + $(this).index();
+    console.log("clicked on tile ", tileIndex);
+
+    $("#strategy_info").empty();
+    $("#strategy_info").append(
+      "<p>"+"Title: " +usersContent[tileIndex].title+"</p>" 
+    );
+    $("#strategy_info").append(
+      "<p>"+"Content: " +usersContent[tileIndex].body+"</p>" 
+    );
+
+
+  });
+}
+
+var paginatorBehavior = function() {
+  var pages = usersContent.length/perPage;
+  if(usersContent.length % perPage !== 0) pages++;
+  console.log("For ", usersContent.length,
+   "items there will be", pages, "pages");
+  $("#strategies_paginator").empty();
+
+  for(var i = 0; i<pages; i++) {
+    $("#strategies_paginator").append("<div class='pagination-tile'><p>"+i+"</p></div>");
+  }
+
+  $(".pagination-tile").on('click', function(event) {
+    $(".pagination-tile").removeClass('active');
+    $(this).addClass('active');
+    $("#strategies_container").empty();
+    currentPage = $(this).index();
+    console.log("clicked on page: ", currentPage);
+
+    var paginationStart = currentPage*perPage;
+    var paginationEnd = paginationStart+perPage;
+    console.log("displaying from ", paginationStart, "to ", paginationEnd);
+    for(var i = paginationStart; i<paginationEnd; i++) {
+      $("#strategies_container").append("<div class='tile'><p>"+usersContent[i].title+"</p></div>" );
+    }
+    tileBehavior();
+  });
+
+}
+
 var welcomeContentBehavior = function() {
   $(".container-primary").hide();
   $(".container-primary:first").show();
@@ -56,11 +113,36 @@ var welcomeContentBehavior = function() {
   $(".section-wrapper").on('click', function(event) {
     console.log("clicked on logo");
     var idx = $(this).attr("index");
+    var section_id = $(this).attr("id");
     console.log("CLICKED:", idx);
+    console.log("id: ", section_id);
+
+    if(section_id === "strategies_section_button") {
+      $.getJSON("http://jsonplaceholder.typicode.com/posts",
+       function(result) {
+        usersContent = result;
+        console.log("got result");
+        // console.log(JSON.stringify(result, null ,2));
+        $("#strategies_container").empty();
+
+
+        for(var i = 0; i<perPage; i++) {
+          $("#strategies_container").append("<div class='tile'><p>"+usersContent[i].title+"</p></div>" );
+        }
+
+        tileBehavior();
+        paginatorBehavior();
+        $(".pagination-tile").removeClass('active');
+        $(".pagination-tile:first").addClass('active');
+      });
+    }
 
     $(".container-primary").hide();
     $(".container-primary").eq(idx).show();
   });
+
+
+
 }
 
 var userContentBehavior = function() {

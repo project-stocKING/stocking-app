@@ -166,6 +166,7 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-jpages (1.0.1)
     rails_admin (0.8.1)
       builder (~> 3.1)
       coffee-rails (~> 4.0)
@@ -256,6 +257,7 @@ DEPENDENCIES
   jquery-rails
   rack-livereload
   rails (= 4.2.5)
+  rails-jpages
   rails_admin
   rb-fsevent
   react-rails (~> 1.0)
