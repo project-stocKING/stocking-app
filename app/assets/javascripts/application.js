@@ -20,14 +20,19 @@
 //= require_tree .
 //assuming this comes from an ajax call
 
-var usersContent = [];
-var perPage = 20;
-var currentPage = 0;
+var companiesContent = [];
+var companiesPerPage = 18;
+var companiesCurrentPage = 0;
+var currentCompanyIndex = 0;
+
+var indexesContent = [];
+var indexesPerPage = 10;
+var indexesCurrentPage = 0;
+var currentIndexIndex = 0;
 
 $(document).ready(function() {
 
   userContentBehavior();
-  // tileBehavior();
   welcomeContentBehavior();
 
   if(document.getElementById("title")===null) {
@@ -55,55 +60,112 @@ $(document).ready(function() {
 
 });
 
-var tileBehavior = function() {
-  console.log("in tile behavior");
-  $(".tile").on('click', function(event) {
-    // console.log("clicked on tile");
-    $(".tile").removeClass('active');
+var strategiesTileBehavior = function() {
+
+  console.log("in strategy-tile behavior");
+  $(".strategy-tile").on('click', function(event) {
+    // console.log("clicked on strategy-tile");
+    $(".strategy-tile").removeClass('active');
     $(this).addClass('active');
 
-    var tileIndex = currentPage*perPage + $(this).index();
-    console.log("clicked on tile ", tileIndex);
+    var strategyIndex = companiesCurrentPage*companiesPerPage + $(this).index();
+    currentCompanyIndex = strategyIndex;
+    console.log("clicked on strategy-tile ", strategyIndex);
 
     $("#strategy_info").empty();
-    $("#strategy_info").append(
-      "<p>"+"Title: " +usersContent[tileIndex].title+"</p>" 
+    $("#strategy_info").append("<div id='strategy_info_content'><h4>description</h4></div>");
+
+    $("#strategy_info_content").append(
+      "<p>"+"Title: " +companiesContent[strategyIndex].title+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
     );
-    $("#strategy_info").append(
-      "<p>"+"Content: " +usersContent[tileIndex].body+"</p>" 
+    $("#strategy_info_content").append(
+      "<p>"+"Content: " +companiesContent[strategyIndex].body+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
     );
 
 
   });
 }
 
-var paginatorBehavior = function() {
-  var pages = usersContent.length/perPage;
-  if(usersContent.length % perPage !== 0) pages++;
-  console.log("For ", usersContent.length,
+
+
+var indexesTileBehavior = function() {
+
+  $(".index-tile").on('click', function(event) {
+    // console.log("clicked on strategy-tile");
+    $(".index-tile").removeClass('active');
+    $(this).addClass('active');
+
+    var indexIndex = indexesCurrentPage*indexesPerPage + $(this).index();
+    currentIndexIndex = indexIndex;
+    console.log("clicked on index-tile ", indexIndex);
+
+    $("#index_info").empty();
+    $("#index_info").append("<div id='index_info_content'><h4>description</h4></div>");
+    $("#index_info_content").append(
+      "<p>"+"Id: "+indexesContent[indexIndex].id+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+    );
+
+    $("#index_info_content").append(
+      "<p>"+"Title: "+indexesContent[indexIndex].title+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+    );
+
+  });
+}
+
+
+var strategiesPaginatorBehavior = function() {
+  var pages = companiesContent.length/companiesPerPage;
+  if(pages * companiesPerPage < companiesContent.length) pages++;
+  console.log("For ", companiesContent.length,
    "items there will be", pages, "pages");
   $("#strategies_paginator").empty();
 
   for(var i = 0; i<pages; i++) {
-    $("#strategies_paginator").append("<div class='pagination-tile'><p>"+i+"</p></div>");
+    $("#strategies_paginator").append("<div class='pagination-strategy-tile'><p>"+(i+1)+"</p></div>");
   }
 
-  $(".pagination-tile").on('click', function(event) {
-    $(".pagination-tile").removeClass('active');
+  $(".pagination-strategy-tile").on('click', function(event) {
+    $(".pagination-strategy-tile").removeClass('active');
     $(this).addClass('active');
     $("#strategies_container").empty();
-    currentPage = $(this).index();
-    console.log("clicked on page: ", currentPage);
+    companiesCurrentPage = $(this).index();
+    console.log("clicked on page: ", companiesCurrentPage);
 
-    var paginationStart = currentPage*perPage;
-    var paginationEnd = paginationStart+perPage;
+    var paginationStart = companiesCurrentPage*companiesPerPage;
+    var paginationEnd = paginationStart+companiesPerPage;
     console.log("displaying from ", paginationStart, "to ", paginationEnd);
     for(var i = paginationStart; i<paginationEnd; i++) {
-      $("#strategies_container").append("<div class='tile'><p>"+usersContent[i].title+"</p></div>" );
+      $("#strategies_container").append("<div class='strategy-tile'><p>"+companiesContent[i].title+"</p></div>"); 
     }
-    tileBehavior();
+    strategiesTileBehavior();
   });
 
+}
+
+var indexesPaginationBehavior = function() {
+  var pages = indexesContent.length/indexesPerPage;
+  if(pages * indexesPerPage < indexesContent.length) pages++;
+  $("#indexes_paginator").empty();
+
+  for(var i = 0; i<pages; i++) {
+    $("#indexes_paginator").append("<div class='pagination-index-tile'><p>"+(i+1)+"</p></div>");
+  }
+
+  $(".pagination-index-tile").on('click', function(event) {
+    $(".pagination-index-tile").removeClass('active');
+    $(this).addClass('active');
+    $("#indexes_container").empty();
+    indexesCurrentPage = $(this).index();
+
+    var paginationStart = indexesCurrentPage * indexesPerPage;
+    var paginationEnd = paginationStart + indexesPerPage;
+
+    for(var i = paginationStart; i<paginationEnd; i++) {
+      $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].id+"</p></div>" );
+    }
+
+    indexesTileBehavior();
+  });
 }
 
 var welcomeContentBehavior = function() {
@@ -118,31 +180,50 @@ var welcomeContentBehavior = function() {
     console.log("id: ", section_id);
 
     if(section_id === "strategies_section_button") {
-      $.getJSON("http://jsonplaceholder.typicode.com/posts",
-       function(result) {
-        usersContent = result;
-        console.log("got result");
-        // console.log(JSON.stringify(result, null ,2));
-        $("#strategies_container").empty();
-
-
-        for(var i = 0; i<perPage; i++) {
-          $("#strategies_container").append("<div class='tile'><p>"+usersContent[i].title+"</p></div>" );
-        }
-
-        tileBehavior();
-        paginatorBehavior();
-        $(".pagination-tile").removeClass('active');
-        $(".pagination-tile:first").addClass('active');
-      });
+      strategiesContentBehavior();
+      indexesContentBehavior();
     }
 
     $(".container-primary").hide();
     $(".container-primary").eq(idx).show();
   });
+}
+
+var strategiesContentBehavior = function() {
+  $.getJSON("http://jsonplaceholder.typicode.com/posts",
+   function(result) {
+    companiesContent = result;
+    console.log("got result");
+    // console.log(JSON.stringify(result, null ,2));
+    $("#strategies_container").empty();
 
 
+    for(var i = 0; i<companiesPerPage; i++) {
+      $("#strategies_container").append("<div class='strategy-tile'><p>"+companiesContent[i].title+"</p></div>" );
+    }
 
+    strategiesTileBehavior();
+    strategiesPaginatorBehavior();
+    $(".pagination-strategy-tile").removeClass('active');
+    $(".pagination-strategy-tile:first").addClass('active');
+  });
+}
+
+var indexesContentBehavior = function() {
+  $.getJSON("http://jsonplaceholder.typicode.com/todos",
+    function(result) {
+      indexesContent = result;
+      $("#indexes_container").empty();
+
+      for(var i = 0; i<indexesPerPage; i++) {
+        $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].id+"</p></div>" );
+      }
+
+      indexesTileBehavior();
+      indexesPaginationBehavior();
+      $(".pagination-index-tile").removeClass('active');
+      $(".pagination-index-tile:first").addClass('active');
+    });
 }
 
 var userContentBehavior = function() {

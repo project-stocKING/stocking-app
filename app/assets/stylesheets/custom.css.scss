@@ -20,11 +20,11 @@ h2 {
 }
 
 h4 {
-    font-size: 19px !important;
-    line-height: 1.375em !important;
-    color: #303030 !important;
-    font-weight: 400 !important;
-    margin-bottom: 30px !important;
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
 }
 
 body {
@@ -71,7 +71,7 @@ body {
 }
 
 .p-wrapper {
-    margin-top: -20px;
+    margin-top: -10px;
 }
 
 .logo-small:hover {
@@ -354,7 +354,7 @@ footer .glyphicon {
 }
 
 .container-primary {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .container-primary.companies {
@@ -373,7 +373,7 @@ footer .glyphicon {
     }
 }
 
-.tile { 
+.strategy-tile { 
     color: white;
     width: 140px;
     height: 140px;
@@ -399,7 +399,39 @@ footer .glyphicon {
     }
 
 }
-.tile:hover, .tile.active {
+.strategy-tile:hover, .strategy-tile.active {
+    background-color: white;
+    color: $primary-color;
+}
+
+
+.index-tile { 
+    color: white;
+    width: 140px;
+    height: 140px;
+    list-style-type: none;
+    cursor: pointer;
+    transition: .3s all;
+    display: inline-block;
+    border: 1px solid white;
+    vertical-align: top;
+    position: relative;
+
+    p {
+        position: absolute;
+        /*padding-top: 50px;*/
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1.5em;
+        font-size: 12px;
+        font-family: Montserrat, sans-serif;
+    }
+
+}
+.index-tile:hover, .index-tile.active {
     background-color: white;
     color: $primary-color;
 }
@@ -408,7 +440,6 @@ footer .glyphicon {
     padding :5px 0px 5px 0px !important;
     margin :5px 0px 5px 0px !important;
 }
-
 
 .mainmenu-bar {
     margin-top: 50px;
@@ -421,16 +452,49 @@ footer .glyphicon {
 .detailed-info {
     background-color: $primary-color;
     color: white;
-    padding: 20px 0px;
-
+    padding: 20px 25%;
     text-align: center;
     text-transform: uppercase;
     line-height: 1.5em;
     font-size: 12px;
     font-family: Montserrat, sans-serif;
+
+    div {
+        padding: 5px 0;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+
 }
 
-.pagination-tile { 
+.pagination-strategy-tile { 
+    color: white;
+    width: 35px;
+    height: 35px;
+    list-style-type: none;
+    cursor: pointer;
+    transition: .3s all;
+    display: inline-block;
+    border: 1px solid white;
+    vertical-align: top;
+    margin: 0px 2px;
+
+    p {
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 35px;
+        font-size: 12px;
+        font-family: Montserrat, sans-serif;
+    }
+
+}
+
+.pagination-strategy-tile:hover, .pagination-strategy-tile.active {
+    background-color: white;
+    color: $primary-color;
+}
+
+.pagination-index-tile { 
     color: white;
     width: 35px;
     height: 35px;
@@ -451,7 +515,8 @@ footer .glyphicon {
     }
 
 }
-.pagination-tile:hover, .pagination-tile.active {
+
+.pagination-index-tile:hover, .pagination-index-tile.active {
     background-color: white;
     color: $primary-color;
 }
