@@ -23,7 +23,7 @@ var companiesContent = [];
 
 var windowWidth = $(window).width();
 var companiesPerPage = Math.ceil(0.9*windowWidth/140) -1;
-companiesPerPage *= 2;
+companiesPerPage *= 3;
 
 var companiesCurrentPage = 0;
 var currentCompanyIndex = 0;
@@ -69,14 +69,15 @@ var windowResizeHandler = function() {
     console.log("WINDOW RESIZED!!!!");
     windowWidth = $(window).width();
     companiesPerPage = Math.ceil(0.9*windowWidth/140) -1;
-    companiesPerPage *= 2;
-    companiesCurrentPage = Math.ceil(currentCompanyIndex/companiesPerPage)-1;
+    companiesPerPage *= 3;
+    console.log("current company: ", currentCompanyIndex);
+    companiesCurrentPage = Math.max(Math.ceil(currentCompanyIndex/companiesPerPage)-1, 0);
 
     companiesPaginationBehavior();
     setCompaniesPagination();
 
     indexesPerPage = companiesPerPage;
-    indexesCurrentPage = Math.ceil(currentIndexIndex/indexesPerPage)-1;
+    indexesCurrentPage = Math.max(Math.ceil(currentIndexIndex/indexesPerPage)-1, 0);
 
     indexesPaginationBehavior();
     setIndexesPagination();
@@ -95,12 +96,14 @@ var setCompaniesPagination = function() {
   $("#companies_container").empty();
 
   for(var i = paginationStart; i<paginationEnd; i++) {
-    $("#companies_container").append("<div class='company-tile'><p>"+companiesContent[i].id+"</p></div>"); 
+    $("#companies_container").append("<div class='company-tile'><p>"+companiesContent[i]+"</p></div>"); 
   }
   companiesTileBehavior();
 }
 
 var setIndexesPagination = function() {
+  var pages = indexesContent.length/indexesPerPage;
+  if(pages < 2) return;
 
   $(".pagination-index-tile").removeClass('active');
   $(".pagination-index-tile").eq(indexesCurrentPage).addClass('active');
@@ -110,8 +113,9 @@ var setIndexesPagination = function() {
   if (paginationEnd >= indexesContent.length) paginationEnd = indexesContent.length - 1;
   $("#indexes_container").empty();
 
-  for(var i = paginationStart; i<paginationEnd; i++) {
-    $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].id+"</p></div>" );
+  var limiter = Math.min(indexesPerPage, paginationEnd);
+  for(var i = paginationStart; i<limiter; i++) {
+    $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].name+"</p></div>" );
   }
 
   indexesTileBehavior();
@@ -119,7 +123,7 @@ var setIndexesPagination = function() {
 
 var companiesTileBehavior = function() {
 
-  if ( currentCompanyIndex && currentCompanyIndex >= companiesCurrentPage*companiesPerPage 
+  if (currentCompanyIndex >= companiesCurrentPage*companiesPerPage 
     && currentCompanyIndex < (companiesCurrentPage+1)*companiesPerPage ) {
     $(".company-tile").eq(currentCompanyIndex%companiesPerPage).addClass('active');
   }
@@ -150,7 +154,7 @@ var companiesTileBehavior = function() {
 
 var indexesTileBehavior = function() {
 
-  if ( currentIndexIndex && currentIndexIndex >= indexesCurrentPage*indexesPerPage 
+  if (currentIndexIndex >= indexesCurrentPage*indexesPerPage 
     && currentIndexIndex < (indexesCurrentPage+1)*indexesPerPage ) {
     $(".index-tile").eq(currentIndexIndex%indexesPerPage).addClass('active');
   }
@@ -168,13 +172,12 @@ var indexesTileBehavior = function() {
     $("#index_info").empty();
     $("#index_info").append("<div id='index_info_content'><h4>description</h4></div>");
     $("#index_info_content").append(
-      "<p>"+"Id: "+indexesContent[indexIndex].id+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
-    );
+      "<p>"+"Name: "+indexesContent[indexIndex].name+"</p></div>");
 
-    $("#index_info_content").append(
-      "<p>"+"Title: "+indexesContent[indexIndex].title+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
-    );
-
+    for(var i=0; i<indexesContent[indexIndex].parameters.length; i++) {
+      $("#index_info_content").append(
+        "<p>"+"Parameter: "+indexesContent[indexIndex].parameters[i]+"</p></div>");
+    }
   });
 }
 
@@ -201,6 +204,7 @@ var companiesPaginationBehavior = function() {
 
 var indexesPaginationBehavior = function() {
   var pages = indexesContent.length/indexesPerPage;
+  if(pages < 2) return;
   if(pages * indexesPerPage < indexesContent.length) pages++;
   $("#indexes_paginator").empty();
 
@@ -238,7 +242,7 @@ var welcomeContentBehavior = function() {
 var companiesContentBehavior = function() {
 
 
-  $.getJSON("http://jsonplaceholder.typicode.com/todos",
+  $.getJSON("http://156.17.41.238:5000/companies",
    function(result) {
     companiesContent = result;
     console.log("got result");
@@ -246,7 +250,7 @@ var companiesContentBehavior = function() {
     $("#companies_container").empty();
 
     for(var i = 0; i<companiesPerPage; i++) {
-      $("#companies_container").append("<div class='company-tile'><p>"+companiesContent[i].id+"</p></div>" );
+      $("#companies_container").append("<div class='company-tile'><p>"+companiesContent[i]+"</p></div>" );
     }
 
     companiesTileBehavior();
@@ -270,13 +274,22 @@ var companiesContentBehavior = function() {
 }
 
 var indexesContentBehavior = function() {
-  $.getJSON("http://jsonplaceholder.typicode.com/todos",
+
+  // $.getJSON("http://156.17.41.238:5000/companies", function(result) {
+  //   console.log(result);
+  // });
+
+  $.getJSON("http://156.17.41.238:5000/indexes",
     function(result) {
+      // console.log(result);
       indexesContent = result;
       $("#indexes_container").empty();
 
-      for(var i = 0; i<indexesPerPage; i++) {
-        $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].id+"</p></div>" );
+      var limiter = Math.min(indexesPerPage, indexesContent.length);
+      for(var i = 0; i<limiter; i++) {
+        var index = indexesContent[i];
+        console.log(JSON.stringify(index));
+        $("#indexes_container").append("<div class='index-tile'><p>"+index.name+"</p></div>" );
       }
 
       indexesTileBehavior();
