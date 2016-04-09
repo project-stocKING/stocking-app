@@ -289,7 +289,6 @@ footer .glyphicon {
     list-style-type: none;
 }
 
-
 .general-list {
     text-align: center;
     background-image: url(asset-path("stock-background-slim.jpg"));
@@ -364,7 +363,7 @@ footer .glyphicon {
 .content-list {
     text-align: center;
     background-color: $primary-color;
-    padding: 20px 0;
+    padding: 20px 5%;
 
     ul {
         /*margin-top: 50px;*/
@@ -373,7 +372,7 @@ footer .glyphicon {
     }
 }
 
-.strategy-tile { 
+.company-tile { 
     color: white;
     width: 140px;
     height: 140px;
@@ -399,7 +398,7 @@ footer .glyphicon {
     }
 
 }
-.strategy-tile:hover, .strategy-tile.active {
+.company-tile:hover, .company-tile.active {
     background-color: white;
     color: $primary-color;
 }
@@ -436,7 +435,7 @@ footer .glyphicon {
     color: $primary-color;
 }
 
-.container-strategies {
+.container-companies {
     padding :5px 0px 5px 0px !important;
     margin :5px 0px 5px 0px !important;
 }
@@ -467,7 +466,7 @@ footer .glyphicon {
 
 }
 
-.pagination-strategy-tile { 
+.pagination-company-tile { 
     color: white;
     width: 35px;
     height: 35px;
@@ -489,7 +488,7 @@ footer .glyphicon {
 
 }
 
-.pagination-strategy-tile:hover, .pagination-strategy-tile.active {
+.pagination-company-tile:hover, .pagination-company-tile.active {
     background-color: white;
     color: $primary-color;
 }

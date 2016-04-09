@@ -18,15 +18,18 @@
 //= require react_ujs
 //= require components
 //= require_tree .
-//assuming this comes from an ajax call
 
 var companiesContent = [];
-var companiesPerPage = 18;
+
+var windowWidth = $(window).width();
+var companiesPerPage = Math.ceil(0.9*windowWidth/140) -1;
+companiesPerPage *= 2;
+
 var companiesCurrentPage = 0;
 var currentCompanyIndex = 0;
 
 var indexesContent = [];
-var indexesPerPage = 10;
+var indexesPerPage = companiesPerPage;
 var indexesCurrentPage = 0;
 var currentIndexIndex = 0;
 
@@ -34,6 +37,7 @@ $(document).ready(function() {
 
   userContentBehavior();
   welcomeContentBehavior();
+  windowResizeHandler();
 
   if(document.getElementById("title")===null) {
     document.getElementById("aboutTab").style.display = "none";
@@ -60,35 +64,97 @@ $(document).ready(function() {
 
 });
 
-var strategiesTileBehavior = function() {
+var windowResizeHandler = function() {
+  $(window).on('resize', function(){
+    console.log("WINDOW RESIZED!!!!");
+    windowWidth = $(window).width();
+    companiesPerPage = Math.ceil(0.9*windowWidth/140) -1;
+    companiesPerPage *= 2;
+    companiesCurrentPage = Math.ceil(currentCompanyIndex/companiesPerPage)-1;
 
-  console.log("in strategy-tile behavior");
-  $(".strategy-tile").on('click', function(event) {
+    companiesPaginationBehavior();
+    setCompaniesPagination();
+
+    indexesPerPage = companiesPerPage;
+    indexesCurrentPage = Math.ceil(currentIndexIndex/indexesPerPage)-1;
+
+    indexesPaginationBehavior();
+    setIndexesPagination();
+
+  });
+}
+
+var setCompaniesPagination = function() {
+
+  $(".pagination-company-tile").removeClass('active');
+  $(".pagination-company-tile").eq(companiesCurrentPage).addClass('active');
+
+  var paginationStart = companiesCurrentPage*companiesPerPage;
+  var paginationEnd = paginationStart+companiesPerPage;
+  if (paginationEnd >= companiesContent.length) paginationEnd = companiesContent.length-1;
+  $("#companies_container").empty();
+
+  for(var i = paginationStart; i<paginationEnd; i++) {
+    $("#companies_container").append("<div class='company-tile'><p>"+companiesContent[i].id+"</p></div>"); 
+  }
+  companiesTileBehavior();
+}
+
+var setIndexesPagination = function() {
+
+  $(".pagination-index-tile").removeClass('active');
+  $(".pagination-index-tile").eq(indexesCurrentPage).addClass('active');
+
+  var paginationStart = indexesCurrentPage * indexesPerPage;
+  var paginationEnd = paginationStart + indexesPerPage;
+  if (paginationEnd >= indexesContent.length) paginationEnd = indexesContent.length - 1;
+  $("#indexes_container").empty();
+
+  for(var i = paginationStart; i<paginationEnd; i++) {
+    $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].id+"</p></div>" );
+  }
+
+  indexesTileBehavior();
+}
+
+var companiesTileBehavior = function() {
+
+  if ( currentCompanyIndex && currentCompanyIndex >= companiesCurrentPage*companiesPerPage 
+    && currentCompanyIndex < (companiesCurrentPage+1)*companiesPerPage ) {
+    $(".company-tile").eq(currentCompanyIndex%companiesPerPage).addClass('active');
+  }
+
+  console.log("in company-tile behavior");
+  $(".company-tile").on('click', function(event) {
     // console.log("clicked on strategy-tile");
-    $(".strategy-tile").removeClass('active');
+    $(".company-tile").removeClass('active');
     $(this).addClass('active');
 
-    var strategyIndex = companiesCurrentPage*companiesPerPage + $(this).index();
-    currentCompanyIndex = strategyIndex;
-    console.log("clicked on strategy-tile ", strategyIndex);
+    var companyIndex = companiesCurrentPage*companiesPerPage + $(this).index();
+    currentCompanyIndex = companyIndex;
+    console.log("clicked on company-tile ", companyIndex);
 
-    $("#strategy_info").empty();
-    $("#strategy_info").append("<div id='strategy_info_content'><h4>description</h4></div>");
+    $("#company_info").empty();
+    $("#company_info").append("<div id='company_info_content'><h4>description</h4></div>");
 
-    $("#strategy_info_content").append(
-      "<p>"+"Title: " +companiesContent[strategyIndex].title+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+    $("#company_info_content").append(
+      "<p>"+"Title: " +companiesContent[companyIndex]+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
     );
-    $("#strategy_info_content").append(
-      "<p>"+"Content: " +companiesContent[strategyIndex].body+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+    $("#company_info_content").append(
+      "<p>"+"Content: " +companiesContent[companyIndex]+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
     );
 
 
   });
 }
 
-
-
 var indexesTileBehavior = function() {
+
+  if ( currentIndexIndex && currentIndexIndex >= indexesCurrentPage*indexesPerPage 
+    && currentIndexIndex < (indexesCurrentPage+1)*indexesPerPage ) {
+    $(".index-tile").eq(currentIndexIndex%indexesPerPage).addClass('active');
+  }
+
 
   $(".index-tile").on('click', function(event) {
     // console.log("clicked on strategy-tile");
@@ -112,32 +178,23 @@ var indexesTileBehavior = function() {
   });
 }
 
-
-var strategiesPaginatorBehavior = function() {
+var companiesPaginationBehavior = function() {
   var pages = companiesContent.length/companiesPerPage;
   if(pages * companiesPerPage < companiesContent.length) pages++;
   console.log("For ", companiesContent.length,
    "items there will be", pages, "pages");
-  $("#strategies_paginator").empty();
+  $("#companies_paginator").empty();
 
   for(var i = 0; i<pages; i++) {
-    $("#strategies_paginator").append("<div class='pagination-strategy-tile'><p>"+(i+1)+"</p></div>");
+    $("#companies_paginator").append("<div class='pagination-company-tile'><p>"+(i+1)+"</p></div>");
   }
+  // setStrategiesPagination();
 
-  $(".pagination-strategy-tile").on('click', function(event) {
-    $(".pagination-strategy-tile").removeClass('active');
-    $(this).addClass('active');
-    $("#strategies_container").empty();
+  $(".pagination-company-tile").on('click', function(event) {
     companiesCurrentPage = $(this).index();
     console.log("clicked on page: ", companiesCurrentPage);
+    setCompaniesPagination();
 
-    var paginationStart = companiesCurrentPage*companiesPerPage;
-    var paginationEnd = paginationStart+companiesPerPage;
-    console.log("displaying from ", paginationStart, "to ", paginationEnd);
-    for(var i = paginationStart; i<paginationEnd; i++) {
-      $("#strategies_container").append("<div class='strategy-tile'><p>"+companiesContent[i].title+"</p></div>"); 
-    }
-    strategiesTileBehavior();
   });
 
 }
@@ -152,19 +209,8 @@ var indexesPaginationBehavior = function() {
   }
 
   $(".pagination-index-tile").on('click', function(event) {
-    $(".pagination-index-tile").removeClass('active');
-    $(this).addClass('active');
-    $("#indexes_container").empty();
     indexesCurrentPage = $(this).index();
-
-    var paginationStart = indexesCurrentPage * indexesPerPage;
-    var paginationEnd = paginationStart + indexesPerPage;
-
-    for(var i = paginationStart; i<paginationEnd; i++) {
-      $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].id+"</p></div>" );
-    }
-
-    indexesTileBehavior();
+    setIndexesPagination();
   });
 }
 
@@ -180,7 +226,7 @@ var welcomeContentBehavior = function() {
     console.log("id: ", section_id);
 
     if(section_id === "strategies_section_button") {
-      strategiesContentBehavior();
+      companiesContentBehavior();
       indexesContentBehavior();
     }
 
@@ -189,24 +235,38 @@ var welcomeContentBehavior = function() {
   });
 }
 
-var strategiesContentBehavior = function() {
-  $.getJSON("http://jsonplaceholder.typicode.com/posts",
+var companiesContentBehavior = function() {
+
+
+  $.getJSON("http://jsonplaceholder.typicode.com/todos",
    function(result) {
     companiesContent = result;
     console.log("got result");
     // console.log(JSON.stringify(result, null ,2));
-    $("#strategies_container").empty();
-
+    $("#companies_container").empty();
 
     for(var i = 0; i<companiesPerPage; i++) {
-      $("#strategies_container").append("<div class='strategy-tile'><p>"+companiesContent[i].title+"</p></div>" );
+      $("#companies_container").append("<div class='company-tile'><p>"+companiesContent[i].id+"</p></div>" );
     }
 
-    strategiesTileBehavior();
-    strategiesPaginatorBehavior();
-    $(".pagination-strategy-tile").removeClass('active');
-    $(".pagination-strategy-tile:first").addClass('active');
+    companiesTileBehavior();
+    companiesPaginationBehavior();
+    $(".pagination-company-tile").removeClass('active');
+    $(".pagination-company-tile:first").addClass('active');
   });
+
+
+  // $.ajax({
+  //   url: "http://156.17.41.238:5001/companies",
+  //   jsonp: "callback",
+  //   dataType: "jsonp",
+  //   data: {
+  //   },
+  //   success: function(reponse) {
+  //     console.log(response);
+  //   }
+  // });
+
 }
 
 var indexesContentBehavior = function() {

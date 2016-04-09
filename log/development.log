@@ -53249,3 +53249,1706 @@ Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa40
 
 
 Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 16:57:44 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:06:15 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.7ms)
+  Rendered welcome/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_shim.html.erb (1.3ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 86ms (Views: 84.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:08:31 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 14397ms (Views: 14396.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-9213a297368182dda4e3e5d3cefb017b28a84f00161a1c14275a096b5652f76b.css" for 127.0.0.1 at 2016-04-03 17:08:46 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:10:22 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 13239ms (Views: 13237.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-55050f01efa0373e79db3b223cb972d760675d537cfebe324573b4a272f5556f.css" for 127.0.0.1 at 2016-04-03 17:10:36 +0200
+
+
+Started GET "/assets/application-5d75157753165e44d4ac13a14a50c1850be9d6744b16b48fa0b874a10ba41ec2.js" for 127.0.0.1 at 2016-04-03 17:10:36 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:10:37 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:10:37 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:11:38 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 13270ms (Views: 13267.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-a3ddbf353ff2711bd7b8ae22516ec9d6aadcefc69149102af124138d6b62242d.css" for 127.0.0.1 at 2016-04-03 17:11:52 +0200
+
+
+Started GET "/assets/application-5d75157753165e44d4ac13a14a50c1850be9d6744b16b48fa0b874a10ba41ec2.js" for 127.0.0.1 at 2016-04-03 17:11:52 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:11:52 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:11:52 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:13:04 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 13169ms (Views: 13167.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-5d75157753165e44d4ac13a14a50c1850be9d6744b16b48fa0b874a10ba41ec2.js" for 127.0.0.1 at 2016-04-03 17:13:18 +0200
+
+
+Started GET "/assets/application-a256050f919658675a924c6ac1e2e6af34fa82d8655509e03d6a162422b4b49c.css" for 127.0.0.1 at 2016-04-03 17:13:18 +0200
+
+
+Started GET "/assets/application-5d75157753165e44d4ac13a14a50c1850be9d6744b16b48fa0b874a10ba41ec2.js" for 127.0.0.1 at 2016-04-03 17:13:18 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:13:18 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:13:18 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:16:43 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 458ms (Views: 456.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-a256050f919658675a924c6ac1e2e6af34fa82d8655509e03d6a162422b4b49c.css" for 127.0.0.1 at 2016-04-03 17:16:44 +0200
+
+
+Started GET "/assets/application-d10ecc0a38869af4cae3d3f4a5c1b25fe7345201d0f244015bcecf5369cae1f1.js" for 127.0.0.1 at 2016-04-03 17:16:44 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:16:45 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:16:45 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:18:06 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 438ms (Views: 437.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-a256050f919658675a924c6ac1e2e6af34fa82d8655509e03d6a162422b4b49c.css" for 127.0.0.1 at 2016-04-03 17:18:07 +0200
+
+
+Started GET "/assets/application-d286d1571808a2db149b0582e4633a501bb8f7c9bddb6df9b927aa625327a846.js" for 127.0.0.1 at 2016-04-03 17:18:07 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:18:08 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:18:08 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:20:59 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.4ms)
+  Rendered welcome/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 370ms (Views: 369.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-a256050f919658675a924c6ac1e2e6af34fa82d8655509e03d6a162422b4b49c.css" for 127.0.0.1 at 2016-04-03 17:21:00 +0200
+
+
+Started GET "/assets/application-ace79edae6cd71dff6c503b8f4c40bbf2d3b79896953ba8bb54b9aecbd907e25.js" for 127.0.0.1 at 2016-04-03 17:21:00 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:21:01 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:21:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:22:14 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1066ms (Views: 1064.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-a256050f919658675a924c6ac1e2e6af34fa82d8655509e03d6a162422b4b49c.css" for 127.0.0.1 at 2016-04-03 17:22:16 +0200
+
+
+Started GET "/assets/application-98595dfcfa22f8bb6778d461355f97eb95493a70731aea22a7e4e103e4c32e17.js" for 127.0.0.1 at 2016-04-03 17:22:16 +0200
+
+
+Started GET "/assets/application-98595dfcfa22f8bb6778d461355f97eb95493a70731aea22a7e4e103e4c32e17.js" for 127.0.0.1 at 2016-04-03 17:22:16 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:22:17 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:22:17 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:22:42 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 402ms (Views: 401.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-8dce94f7b4b3a75eff15d2d1af3479b36056e5a67cadfe04277fcbaf534999d3.js" for 127.0.0.1 at 2016-04-03 17:22:43 +0200
+
+
+Started GET "/assets/application-a256050f919658675a924c6ac1e2e6af34fa82d8655509e03d6a162422b4b49c.css" for 127.0.0.1 at 2016-04-03 17:22:43 +0200
+
+
+Started GET "/assets/application-8dce94f7b4b3a75eff15d2d1af3479b36056e5a67cadfe04277fcbaf534999d3.js" for 127.0.0.1 at 2016-04-03 17:22:43 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:22:44 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:22:44 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:22:53 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 499ms (Views: 497.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-a256050f919658675a924c6ac1e2e6af34fa82d8655509e03d6a162422b4b49c.css" for 127.0.0.1 at 2016-04-03 17:22:54 +0200
+
+
+Started GET "/assets/application-9738171b80e380ed9e8d07eab9d8743871233a16ef5dbec41b107afd36926d42.js" for 127.0.0.1 at 2016-04-03 17:22:54 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:22:55 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:22:55 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:23:22 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 95ms (Views: 92.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application-a256050f919658675a924c6ac1e2e6af34fa82d8655509e03d6a162422b4b49c.css" for 127.0.0.1 at 2016-04-03 17:23:23 +0200
+
+
+Started GET "/assets/application-9738171b80e380ed9e8d07eab9d8743871233a16ef5dbec41b107afd36926d42.js" for 127.0.0.1 at 2016-04-03 17:23:23 +0200
+
+
+Started GET "/assets/application-9738171b80e380ed9e8d07eab9d8743871233a16ef5dbec41b107afd36926d42.js" for 127.0.0.1 at 2016-04-03 17:23:23 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:23:24 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:23:24 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:31:59 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 14555ms (Views: 14553.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-112394b72af4710e1857124c5dc5d46bce7676b19f20de3471728f5d9266bc27.css" for 127.0.0.1 at 2016-04-03 17:32:14 +0200
+
+
+Started GET "/assets/application-78fb242772d525faff37648f6727c3246a9f3b00348e5fa27bb8d82fc2fb3992.js" for 127.0.0.1 at 2016-04-03 17:32:15 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:32:15 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:32:15 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:34:59 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 448ms (Views: 446.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-112394b72af4710e1857124c5dc5d46bce7676b19f20de3471728f5d9266bc27.css" for 127.0.0.1 at 2016-04-03 17:35:00 +0200
+
+
+Started GET "/assets/application-2c3c9aa74b6577bdfbbff30c0f6c08a3fe17c7e131560a9714114dd3d997e58f.js" for 127.0.0.1 at 2016-04-03 17:35:00 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:35:01 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:35:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:37:48 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 14102ms (Views: 14100.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-4294de337674cee9eca7b3f6970ea1c157f9b95311352f7cc10dd0d2ed83c62d.css" for 127.0.0.1 at 2016-04-03 17:38:03 +0200
+
+
+Started GET "/assets/application-2c3c9aa74b6577bdfbbff30c0f6c08a3fe17c7e131560a9714114dd3d997e58f.js" for 127.0.0.1 at 2016-04-03 17:38:03 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:38:04 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:38:04 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:38:34 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 14895ms (Views: 14893.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 17:38:50 +0200
+
+
+Started GET "/assets/application-2c3c9aa74b6577bdfbbff30c0f6c08a3fe17c7e131560a9714114dd3d997e58f.js" for 127.0.0.1 at 2016-04-03 17:38:50 +0200
+
+
+Started GET "/assets/application-2c3c9aa74b6577bdfbbff30c0f6c08a3fe17c7e131560a9714114dd3d997e58f.js" for 127.0.0.1 at 2016-04-03 17:38:50 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:38:51 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:38:51 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:39:29 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.0ms)
+  Rendered welcome/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 423ms (Views: 421.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 17:39:30 +0200
+
+
+Started GET "/assets/application-ea0460b9a562ff82ec524edc0f889329b2e8f58c23db416a22e06385dbee6e32.js" for 127.0.0.1 at 2016-04-03 17:39:30 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:39:30 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:39:30 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:41:12 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 397ms (Views: 395.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 17:41:14 +0200
+
+
+Started GET "/assets/application-1546ccad99ae0aa384c957e478cdd6d6008d690e1ffff9951998cc8926e5b77f.js" for 127.0.0.1 at 2016-04-03 17:41:14 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:41:14 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:41:14 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:44:57 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 454ms (Views: 452.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 17:44:58 +0200
+
+
+Started GET "/assets/application-cdbcf750941ba04144c52b465855e343b428cc999998a78274014048d6b96623.js" for 127.0.0.1 at 2016-04-03 17:44:58 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:44:59 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:44:59 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:46:29 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 541ms (Views: 540.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 17:46:31 +0200
+
+
+Started GET "/assets/application-ac49239045d374c0fe7a65610bdf085b458694a50775e23ace8393443a58de09.js" for 127.0.0.1 at 2016-04-03 17:46:31 +0200
+
+
+Started GET "/assets/application-ac49239045d374c0fe7a65610bdf085b458694a50775e23ace8393443a58de09.js" for 127.0.0.1 at 2016-04-03 17:46:33 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:46:33 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:46:33 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:55:26 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 489ms (Views: 487.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 17:55:28 +0200
+
+
+Started GET "/assets/application-c7658a1d40df0e8c41c47c0ad3a5b4f2cc85984c31c5ff4ded46efe786f5cb03.js" for 127.0.0.1 at 2016-04-03 17:55:28 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:55:28 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:55:28 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:55:59 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 74ms (Views: 73.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 17:56:00 +0200
+
+
+Started GET "/assets/application-c7658a1d40df0e8c41c47c0ad3a5b4f2cc85984c31c5ff4ded46efe786f5cb03.js" for 127.0.0.1 at 2016-04-03 17:56:00 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:56:01 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:56:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:57:35 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 409ms (Views: 408.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 17:57:36 +0200
+
+
+Started GET "/assets/application-2899f71846e77ddb5a49e58205c3b52a103bc2e2b5ed7339175c32f0f30f3008.js" for 127.0.0.1 at 2016-04-03 17:57:36 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:57:37 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:57:37 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 17:58:46 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 428ms (Views: 425.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 17:58:48 +0200
+
+
+Started GET "/assets/application-8cdf8b8835560c555a8ced2c8ac9be47127a6f56207cd39a7ba6d6aa2a852948.js" for 127.0.0.1 at 2016-04-03 17:58:48 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 17:58:48 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 17:58:48 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:18:46 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 84ms (Views: 83.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:18:47 +0200
+
+
+Started GET "/assets/application-8cdf8b8835560c555a8ced2c8ac9be47127a6f56207cd39a7ba6d6aa2a852948.js" for 127.0.0.1 at 2016-04-03 18:18:47 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:18:47 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:18:47 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:20:09 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 72ms (Views: 71.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-8cdf8b8835560c555a8ced2c8ac9be47127a6f56207cd39a7ba6d6aa2a852948.js" for 127.0.0.1 at 2016-04-03 18:20:09 +0200
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:20:09 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:20:10 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:20:10 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:20:40 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 371ms (Views: 369.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:20:41 +0200
+
+
+Started GET "/assets/application-6c0508fafa20e807206ae1f3fdf0607d14b5dd2ee9d3c4d9d964974dac3e1ba2.js" for 127.0.0.1 at 2016-04-03 18:20:41 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:20:41 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:20:41 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:22:19 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 444ms (Views: 442.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:22:20 +0200
+
+
+Started GET "/assets/application-97bde970bcef5058896c3d60363352e45d6a1fc790795296d5220aae35f8c668.js" for 127.0.0.1 at 2016-04-03 18:22:20 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:22:21 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:22:21 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:22:54 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.3ms)
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 392ms (Views: 389.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-b4453779bab9bd481ebabb34bf174cc72bdac4539e65e91be549eaf64f708fae.js" for 127.0.0.1 at 2016-04-03 18:22:55 +0200
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:22:55 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:22:56 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:22:56 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:24:09 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 657ms (Views: 655.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:24:11 +0200
+
+
+Started GET "/assets/application-1e4ed59b5e53024c6f570db0ed4fad6ee3f1beba418696cfb9242d9b6e090cea.js" for 127.0.0.1 at 2016-04-03 18:24:11 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:24:11 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:24:11 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:26:08 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 448ms (Views: 446.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:26:09 +0200
+
+
+Started GET "/assets/application-90aff290fc39f3f39d00339f393b84de77fb7b7107f9eecbf4c87072f6f54aa0.js" for 127.0.0.1 at 2016-04-03 18:26:09 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:26:10 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:26:10 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:28:32 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 443ms (Views: 441.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:28:33 +0200
+
+
+Started GET "/assets/application-b845237a4eee4187974f3f6ba563f096b4d4571a802728d1b90abf17a95236b8.js" for 127.0.0.1 at 2016-04-03 18:28:33 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:28:33 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:28:33 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:31:04 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 404ms (Views: 401.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-4f90206f4d3b22ee210c46400b7341bf62539cdfbdb668e46e2fa1a60bc778e0.js" for 127.0.0.1 at 2016-04-03 18:31:05 +0200
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:31:05 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:31:06 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:31:06 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:40:06 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 440ms (Views: 438.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:40:07 +0200
+
+
+Started GET "/assets/application-a760c28627866b991a9f63bb5fcfa2ed256a9fcc2708fcf156b663f6f560232d.js" for 127.0.0.1 at 2016-04-03 18:40:07 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:40:07 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:40:07 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:40:24 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 80ms (Views: 78.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:40:25 +0200
+
+
+Started GET "/assets/application-a760c28627866b991a9f63bb5fcfa2ed256a9fcc2708fcf156b663f6f560232d.js" for 127.0.0.1 at 2016-04-03 18:40:25 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:40:26 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:40:26 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:41:08 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.3ms)
+  Rendered welcome/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 382ms (Views: 379.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:41:09 +0200
+
+
+Started GET "/assets/application-8eee89aa4940c65908ec28d6937a6a85f70d5a658a4536cbdf532202da2c0203.js" for 127.0.0.1 at 2016-04-03 18:41:09 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:41:10 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:41:10 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:42:32 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 400ms (Views: 397.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:42:33 +0200
+
+
+Started GET "/assets/application-f3c6c14257c79efb65e4dda3d00397a3c7ff654d8fc379ce8e7fefd2892c98e0.js" for 127.0.0.1 at 2016-04-03 18:42:33 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:42:34 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:42:34 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:47:43 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 373ms (Views: 372.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:47:44 +0200
+
+
+Started GET "/assets/application-978846c95d2b92ac95b5ab524ba0fedd7b35e7947afd7283c10688aadb429528.js" for 127.0.0.1 at 2016-04-03 18:47:44 +0200
+
+
+Started GET "/assets/application-978846c95d2b92ac95b5ab524ba0fedd7b35e7947afd7283c10688aadb429528.js" for 127.0.0.1 at 2016-04-03 18:47:44 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:47:44 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:47:44 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:49:59 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 395ms (Views: 393.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:50:00 +0200
+
+
+Started GET "/assets/application-a56a4a31d4f8afb6b7d62e82b0601b94d754602476c17ef91dcf820123fd38d3.js" for 127.0.0.1 at 2016-04-03 18:50:00 +0200
+
+
+Started GET "/assets/application-a56a4a31d4f8afb6b7d62e82b0601b94d754602476c17ef91dcf820123fd38d3.js" for 127.0.0.1 at 2016-04-03 18:50:00 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:50:01 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:50:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:50:57 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 368ms (Views: 366.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:50:57 +0200
+
+
+Started GET "/assets/application-8f6b372b487d3201eba398e407922247121f83ebb00462a2d1a48bf5d08e471c.js" for 127.0.0.1 at 2016-04-03 18:50:57 +0200
+
+
+Started GET "/assets/application-8f6b372b487d3201eba398e407922247121f83ebb00462a2d1a48bf5d08e471c.js" for 127.0.0.1 at 2016-04-03 18:51:01 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:51:01 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:51:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 18:52:23 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 370ms (Views: 368.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 18:52:24 +0200
+
+
+Started GET "/assets/application-9922916e6e388b1afc994e66de6b6e9e382e544c49d3f7847e80c5d3bb508b9d.js" for 127.0.0.1 at 2016-04-03 18:52:24 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 18:52:24 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 18:52:24 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 19:07:20 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 507ms (Views: 505.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 19:07:21 +0200
+
+
+Started GET "/assets/application-0c017691a8249951b4fd06912c6112d74e88d2d0f1fa965b82605935c257dc8f.js" for 127.0.0.1 at 2016-04-03 19:07:21 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 19:07:22 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 19:07:22 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-03 19:08:07 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 383ms (Views: 381.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-03 19:08:09 +0200
+
+
+Started GET "/assets/application-6a5159d0ba7efa8cb152fab96b4c111d0cba0be94669e2feaefe3c69bd5fe68f.js" for 127.0.0.1 at 2016-04-03 19:08:09 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-03 19:08:09 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-03 19:08:09 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 00:15:58 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 77.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-6a5159d0ba7efa8cb152fab96b4c111d0cba0be94669e2feaefe3c69bd5fe68f.js" for 127.0.0.1 at 2016-04-04 00:15:59 +0200
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-04 00:15:59 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-04 00:15:59 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-04 00:15:59 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 09:32:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.8ms)
+  Rendered welcome/index.html.erb within layouts/application (98.4ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 2991ms (Views: 2964.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-04 09:32:57 +0200
+
+
+Started GET "/assets/application-ce061bd4808428b5d6c88a5bc856468ddc69ad08c7d265a2336e1fafeca09659.js" for 127.0.0.1 at 2016-04-04 09:32:57 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-04 09:32:57 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-04 09:32:57 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 09:33:06 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 104ms (Views: 101.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 09:35:55 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 414ms (Views: 412.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-04 09:35:56 +0200
+
+
+Started GET "/assets/application-5e052eccc11dc80fcfdea32098c097f8f6506ac242217220b4524f3f6490ee9c.js" for 127.0.0.1 at 2016-04-04 09:35:56 +0200
+
+
+Started GET "/assets/application-5e052eccc11dc80fcfdea32098c097f8f6506ac242217220b4524f3f6490ee9c.js" for 127.0.0.1 at 2016-04-04 09:35:56 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-04 09:35:56 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-04 09:35:56 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 14:34:03 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (197.4ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 3414ms (Views: 3377.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 14:34:08 +0200
+
+
+Started GET "/assets/application-5e052eccc11dc80fcfdea32098c097f8f6506ac242217220b4524f3f6490ee9c.js" for 127.0.0.1 at 2016-04-09 14:34:08 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 14:34:10 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 14:34:10 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 14:53:45 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 181ms (Views: 179.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 14:53:45 +0200
+
+
+Started GET "/assets/application-5e052eccc11dc80fcfdea32098c097f8f6506ac242217220b4524f3f6490ee9c.js" for 127.0.0.1 at 2016-04-09 14:53:46 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 14:53:46 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 14:53:46 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 14:57:07 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 116ms (Views: 114.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 14:57:07 +0200
+
+
+Started GET "/assets/application-5e052eccc11dc80fcfdea32098c097f8f6506ac242217220b4524f3f6490ee9c.js" for 127.0.0.1 at 2016-04-09 14:57:07 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 14:57:08 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 14:57:08 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 14:57:34 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 563ms (Views: 561.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 14:57:35 +0200
+
+
+Started GET "/assets/application-c6a7b214169a1c8644db5902511c32e816e98436cabb8822f96a9646db2bc0e8.js" for 127.0.0.1 at 2016-04-09 14:57:35 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 14:57:36 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 14:57:36 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 14:58:16 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 398ms (Views: 396.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 14:58:16 +0200
+
+
+Started GET "/assets/application-b84622814293c442e5a629283cd837ecc941d17b805f1722c30e404d4e5afeb3.js" for 127.0.0.1 at 2016-04-09 14:58:16 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 14:58:17 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 14:58:17 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 14:59:30 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 403ms (Views: 400.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 14:59:31 +0200
+
+
+Started GET "/assets/application-eb11a42cd57eca239ab0ca96968c14bfc2e6d2b2b097e5db030f67be3bc44ad7.js" for 127.0.0.1 at 2016-04-09 14:59:32 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 14:59:32 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 14:59:32 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 15:04:26 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 422ms (Views: 420.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 15:04:27 +0200
+
+
+Started GET "/assets/application-d9f5ac3a4238377f842668799ec852763afb54ec26603007059781b2df72113b.js" for 127.0.0.1 at 2016-04-09 15:04:27 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 15:04:28 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 15:04:28 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 15:05:10 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 410ms (Views: 407.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e66c95175a35b469db2eaeda714140942da582a7c43b22744a438c9e4f71638a.js" for 127.0.0.1 at 2016-04-09 15:05:11 +0200
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 15:05:11 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 15:05:12 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 15:05:12 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 15:07:21 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 384ms (Views: 382.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 15:07:22 +0200
+
+
+Started GET "/assets/application-9b9a8b670bf22f4fbfccc28f44a791727b18817e89ba100a6b042836ddb74692.js" for 127.0.0.1 at 2016-04-09 15:07:22 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 15:07:23 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 15:07:23 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 15:21:41 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 423ms (Views: 421.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 15:21:42 +0200
+
+
+Started GET "/assets/application-09985a4acb03b3fa1aac814787645ef5b844b09fd4dc0bf115181e54b44c6659.js" for 127.0.0.1 at 2016-04-09 15:21:42 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 15:21:43 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 15:21:43 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 15:23:20 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 482ms (Views: 481.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 15:23:21 +0200
+
+
+Started GET "/assets/application-01d9247cccb6450eba4233e10d07f2dce8f88df1dd50ab5bff2fd011e93477e1.js" for 127.0.0.1 at 2016-04-09 15:23:21 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 15:23:22 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 15:23:22 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 15:34:56 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 100ms (Views: 96.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 15:34:57 +0200
+
+
+Started GET "/assets/application-01d9247cccb6450eba4233e10d07f2dce8f88df1dd50ab5bff2fd011e93477e1.js" for 127.0.0.1 at 2016-04-09 15:34:57 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 15:34:58 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 15:34:58 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 18:39:42 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 428ms (Views: 426.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 18:39:43 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 96ms (Views: 94.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-2598897a5b26be8b5d9f79d574de91d5411b4c0265e6c905a93088c477dab3e9.js" for 127.0.0.1 at 2016-04-09 18:39:43 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 18:42:53 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 391ms (Views: 390.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-40309b66d209eff30929e3abe0bc5afcbc0ac8838dc03db7b5d28e5d438134ec.js" for 127.0.0.1 at 2016-04-09 18:42:54 +0200
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 18:42:54 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 18:42:55 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 18:42:55 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 18:45:24 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.4ms)
+  Rendered welcome/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 83ms (Views: 81.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application-40309b66d209eff30929e3abe0bc5afcbc0ac8838dc03db7b5d28e5d438134ec.js" for 127.0.0.1 at 2016-04-09 18:45:24 +0200
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 18:45:24 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 18:45:25 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 18:45:25 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 18:50:12 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.7ms)
+  Rendered welcome/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 381ms (Views: 379.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 18:50:13 +0200
+
+
+Started GET "/assets/application-45800218a94e780f177707bca33df61fbc2a98daf1e4b267a91ac5261e084af8.js" for 127.0.0.1 at 2016-04-09 18:50:13 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 18:50:14 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 18:50:14 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 18:51:27 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 431ms (Views: 429.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 18:51:28 +0200
+
+
+Started GET "/assets/application-ec1dbf33f052e545e74ac1536a6b5940f6e21a4d8f21094a6cd990dcd921ecfb.js" for 127.0.0.1 at 2016-04-09 18:51:28 +0200
+
+
+Started GET "/assets/application-ec1dbf33f052e545e74ac1536a6b5940f6e21a4d8f21094a6cd990dcd921ecfb.js" for 127.0.0.1 at 2016-04-09 18:51:28 +0200
+
+
+Started GET "/assets/application-e07fd5945be30a8d516a1ccf0d72aa32b78dec01ca8fa8ef529d55381adf735a.css" for 127.0.0.1 at 2016-04-09 18:51:28 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 18:51:29 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 18:51:29 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 18:57:21 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (1.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20451ms (Views: 20450.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 18:57:41 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 128ms (Views: 127.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 18:57:42 +0200
+
+
+Started GET "/assets/application-809932879dacc8849c4553e6fad52462c40e9d4d398cf259cf368bf3072ef882.js" for 127.0.0.1 at 2016-04-09 18:57:42 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 18:58:24 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 430ms (Views: 427.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 18:58:25 +0200
+
+
+Started GET "/assets/application-dcea8a2172129ea1c17c2cfc687baef21c6f6829c2aa0a995997061f6a11f1a3.js" for 127.0.0.1 at 2016-04-09 18:58:25 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 18:58:26 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 18:58:26 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 19:22:59 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 398ms (Views: 396.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 19:23:00 +0200
+
+
+Started GET "/assets/application-faf95f038fd0f7fc1073e7d011236bed29c54b4fba0d042e34f25325a5b12258.js" for 127.0.0.1 at 2016-04-09 19:23:00 +0200
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 19:23:00 +0200
+
+
+Started GET "/assets/application-faf95f038fd0f7fc1073e7d011236bed29c54b4fba0d042e34f25325a5b12258.js" for 127.0.0.1 at 2016-04-09 19:23:00 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 19:23:01 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 19:23:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 19:26:39 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 536ms (Views: 534.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 19:26:40 +0200
+
+
+Started GET "/assets/application-e84e3e9b08cb04c22b831d04c22d8f712246d92a7df6c22e751e54d048582573.js" for 127.0.0.1 at 2016-04-09 19:26:40 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 19:26:41 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 19:26:41 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 19:27:38 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 375ms (Views: 373.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 19:27:39 +0200
+
+
+Started GET "/assets/application-a837a487439c4a2b55a176abfc07e1737d82a8c67de6c49c0d02deb6fd319b4e.js" for 127.0.0.1 at 2016-04-09 19:27:39 +0200
+
+
+Started GET "/assets/application-a837a487439c4a2b55a176abfc07e1737d82a8c67de6c49c0d02deb6fd319b4e.js" for 127.0.0.1 at 2016-04-09 19:27:39 +0200
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 19:27:39 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 19:27:40 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 19:27:40 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 19:39:50 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 422ms (Views: 421.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 19:39:51 +0200
+
+
+Started GET "/assets/application-a79845c51f50e71c9cf6b65a47f092dbbcc240cd17f6227d74f592bdec6d3e2c.js" for 127.0.0.1 at 2016-04-09 19:39:51 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 19:39:52 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 19:39:52 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 19:42:19 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 396ms (Views: 394.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 19:42:20 +0200
+
+
+Started GET "/assets/application-09ca08e5134cf73c3e68251bbe10fa33dd9b6c4603669129f7a2601e302c2c9d.js" for 127.0.0.1 at 2016-04-09 19:42:20 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 19:42:20 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 19:42:20 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 19:50:29 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (5.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 419ms (Views: 418.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 19:50:30 +0200
+
+
+Started GET "/assets/application-4f83f398659c95ecb22f14e81ac4199b272fb1044336a3c202b82dd5bae39c03.js" for 127.0.0.1 at 2016-04-09 19:50:30 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 19:50:31 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 19:50:31 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-09 19:51:39 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 411ms (Views: 409.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-c3b047ba38200baa13b65d54649c8b7075b543eaa501fc9a81c569dabd66a121.css" for 127.0.0.1 at 2016-04-09 19:51:40 +0200
+
+
+Started GET "/assets/application-40f713fdf7e050913029c241e54c16ec22dd0cb7148d6fdb0a7e337412bd116e.js" for 127.0.0.1 at 2016-04-09 19:51:40 +0200
+
+
+Started GET "/assets/stock-background-c5805e1e311fa977ec8b3486252e050bd75c1eaa405a2e4b6d266089b46094a6.jpg" for 127.0.0.1 at 2016-04-09 19:51:41 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-04-09 19:51:41 +0200
