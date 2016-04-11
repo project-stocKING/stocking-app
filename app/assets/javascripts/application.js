@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require react
@@ -33,11 +34,28 @@ var indexesPerPage = companiesPerPage;
 var indexesCurrentPage = 0;
 var currentIndexIndex = 0;
 
+var calculationResult = [];
+
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}
+
 $(document).ready(function() {
 
   userContentBehavior();
   welcomeContentBehavior();
   windowResizeHandler();
+
+  $.datepicker.setDefaults(
+    $.extend( $.datepicker.regional[ '' ] )
+  );
 
   if(document.getElementById("title")===null) {
     document.getElementById("aboutTab").style.display = "none";
@@ -63,6 +81,85 @@ $(document).ready(function() {
   };
 
 });
+
+var createForm = function(json, targetDiv) {
+  var form = $("<form/>", 
+                   { id: 'index_form' }
+              );
+
+  for(var key in json.parameters ) {
+    console.log(key, json.parameters[key]);
+
+    var paramId = key+"_key";
+    form.append("<p>"+key);
+    form.append(
+      $("<input>",
+          {type: 'text',
+          id: paramId,
+          name: key,
+          style: 'width:40%'}
+        )
+    );
+    form.append("</p>");
+  }
+  form.append( 
+       $("<input>", 
+            { type:'submit',
+              id: 'form_submit', 
+              value:'Submit', 
+              style:'width:30%' }
+         )
+  );
+  $(targetDiv).append(form);
+
+  for (var key in json.parameters) {
+    if (json.parameters[key] === 'Date') {
+      console.log("lets add date");
+      var paramId = key+"_key";
+      console.log("#"+paramId);
+      var id = "#"+paramId;
+      $(function() {
+        $("#"+paramId).datepicker({
+          dateFormat: "yymmdd"
+        });
+      });
+    }
+  }
+
+  $('#index_form').submit(function(event) {
+    console.log('clicked on submit'); 
+    event.preventDefault();
+
+    var serverUrl = 'http://156.17.41.238:5001/indexes';
+    var $form = $("#index_form");
+    var data = getFormData($form);
+    var postdata = {
+      stockName: companiesContent[currentCompanyIndex],
+      indexName: indexesContent[currentIndexIndex].indexName,
+      parameters: data
+    }
+    console.log(JSON.stringify(postdata));
+
+    $.post(serverUrl, {
+      data: JSON.stringify(postdata),
+      contentType: "application/json",
+      crossDomain: true,
+      dataType: "json"
+
+    }).done(function(res) {
+      console.log(JSON.stringify(res));
+      calculationResult = res;
+      displayResult();
+    }).fail(function(res) {
+      console.log(JSON.stringify(res));
+    });
+  
+    
+  });
+
+}
+
+
 
 var windowResizeHandler = function() {
   $(window).on('resize', function(){
@@ -115,7 +212,7 @@ var setIndexesPagination = function() {
 
   var limiter = Math.min(indexesPerPage, paginationEnd);
   for(var i = paginationStart; i<limiter; i++) {
-    $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].name+"</p></div>" );
+    $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].indexName+"</p></div>" );
   }
 
   indexesTileBehavior();
@@ -152,6 +249,19 @@ var companiesTileBehavior = function() {
   });
 }
 
+var displayResult = function() {
+
+  $("#result_info").empty();
+  $("#result_info").append("<div id='result_info_content'><h4>results</h4></div>");
+  for(var i = 0; i<calculationResult.length; i++) {
+    var res = calculationResult[i];
+    $("#result_info_content").append('<div padding="20px 20px"></div>');
+    $("#result_info_content").append("<p> Operation: "+res.result.name +"</p>");
+    $("#result_info_content").append("<p> Index: "+res.indexName +"</p>");
+    $("#result_info_content").append("<p> Date: "+res.date +"</p>");
+  }
+}
+
 var indexesTileBehavior = function() {
 
   if (currentIndexIndex >= indexesCurrentPage*indexesPerPage 
@@ -172,12 +282,13 @@ var indexesTileBehavior = function() {
     $("#index_info").empty();
     $("#index_info").append("<div id='index_info_content'><h4>description</h4></div>");
     $("#index_info_content").append(
-      "<p>"+"Name: "+indexesContent[indexIndex].name+"</p></div>");
+      "<p>"+"Name: "+indexesContent[indexIndex].indexName+"</p></div>");
 
     for(var i=0; i<indexesContent[indexIndex].parameters.length; i++) {
       $("#index_info_content").append(
         "<p>"+"Parameter: "+indexesContent[indexIndex].parameters[i]+"</p></div>");
     }
+    createForm(indexesContent[indexIndex], "#index_info_content");
   });
 }
 
@@ -242,7 +353,7 @@ var welcomeContentBehavior = function() {
 var companiesContentBehavior = function() {
 
 
-  $.getJSON("http://156.17.41.238:5000/companies",
+  $.getJSON("http://156.17.41.238:5001/companies",
    function(result) {
     companiesContent = result;
     console.log("got result");
@@ -257,19 +368,9 @@ var companiesContentBehavior = function() {
     companiesPaginationBehavior();
     $(".pagination-company-tile").removeClass('active');
     $(".pagination-company-tile:first").addClass('active');
+    // $("#companies_container").append('<iframe display=block width="420" height="315"src="https://www.youtube.com/embed/Osjohw3glPk"></iframe>');
+
   });
-
-
-  // $.ajax({
-  //   url: "http://156.17.41.238:5001/companies",
-  //   jsonp: "callback",
-  //   dataType: "jsonp",
-  //   data: {
-  //   },
-  //   success: function(reponse) {
-  //     console.log(response);
-  //   }
-  // });
 
 }
 
@@ -279,7 +380,7 @@ var indexesContentBehavior = function() {
   //   console.log(result);
   // });
 
-  $.getJSON("http://156.17.41.238:5000/indexes",
+  $.getJSON("http://156.17.41.238:5001/indexes",
     function(result) {
       // console.log(result);
       indexesContent = result;
@@ -289,7 +390,7 @@ var indexesContentBehavior = function() {
       for(var i = 0; i<limiter; i++) {
         var index = indexesContent[i];
         console.log(JSON.stringify(index));
-        $("#indexes_container").append("<div class='index-tile'><p>"+index.name+"</p></div>" );
+        $("#indexes_container").append("<div class='index-tile'><p>"+index.indexName+"</p></div>" );
       }
 
       indexesTileBehavior();
@@ -297,6 +398,7 @@ var indexesContentBehavior = function() {
       $(".pagination-index-tile").removeClass('active');
       $(".pagination-index-tile:first").addClass('active');
     });
+
 }
 
 var userContentBehavior = function() {
