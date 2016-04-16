@@ -130,36 +130,48 @@ var createForm = function(json, targetDiv) {
     console.log('clicked on submit'); 
     event.preventDefault();
 
-    var serverUrl = 'http://156.17.41.238:5001/indexes';
+    var serverUrl = 'http://156.17.41.238:5000/indexes'
+    // var serverUrl = 'http://httpbin.org/post';
+    
     var $form = $("#index_form");
     var data = getFormData($form);
+    console.log(JSON.stringify(data, null, 2));
     var postdata = {
       stockName: companiesContent[currentCompanyIndex],
       indexName: indexesContent[currentIndexIndex].indexName,
       parameters: data
     }
-    console.log(JSON.stringify(postdata));
+    // console.log(JSON.stringify(postdata));
 
-    $.post(serverUrl, {
-      data: JSON.stringify(postdata),
-      contentType: "application/json",
-      crossDomain: true,
-      dataType: "json"
+    // $.post(serverUrl, {
+    //   data: JSON.stringify(postdata),
+    //   contentType: "application/json",
+    //   crossDomain: true,
+    //   dataType: "json"
 
-    }).done(function(res) {
-      console.log(JSON.stringify(res));
-      calculationResult = res;
-      displayResult();
-    }).fail(function(res) {
-      console.log(JSON.stringify(res));
-    });
-  
-    
+    // }).done(function(res) {
+    //   console.log(JSON.stringify(res, null, 2));
+    //   calculationResult = res;
+    //   displayResult();
+    // }).fail(function(res) {
+    //   console.log(JSON.stringify(res));
+    // });
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', serverUrl);
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          calculationResult = JSON.parse(xhr.responseText);
+          console.log(JSON.stringify(calculationResult, null, 2));
+          displayResult();
+        }
+    }
+    xhr.send(JSON.stringify(postdata));
+
+
   });
-
 }
-
-
 
 var windowResizeHandler = function() {
   $(window).on('resize', function(){
