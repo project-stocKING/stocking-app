@@ -441,7 +441,7 @@ footer .glyphicon {
 }
 
 .mainmenu-bar {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .main-content {
@@ -461,12 +461,37 @@ footer .glyphicon {
     div {
         padding: 5px 0;
         border-top: 1px solid white;
-        border-bottom: 1px solid white;
+        /*border-bottom: 1px solid white;*/
+    }
+
+    button {
+        color: $primary-color;
+        background-color: white;
+        padding: 15px 32px;
+        margin-right: 25px;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        border: 1px solid white;
+        text-align: center;
+        font-size: 14px;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+    }
+    button:hover {
+        color: white;
+        background-color: $primary-color;
+        /*border: 1px solid white;*/
     }
 
     input {
         color: black;
         display: inline-block;
+        padding: 7px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
     }
 
 }
@@ -496,6 +521,7 @@ footer .glyphicon {
 .pagination-company-tile:hover, .pagination-company-tile.active {
     background-color: white;
     color: $primary-color;
+    numerek: 0;
 }
 
 .pagination-index-tile { 

@@ -4,13 +4,14 @@
   <div class="row">
 
     <div class="col-sm-2"></div>
+
     <div class="col-sm-2">
 
-      <div id="companies_section_button" class="section-wrapper" index=0>
-        <span class="glyphicon glyphicon-usd logo-small"></span>
-        <h4>COMPANIES</h4>
+      <div id="strategies_section_button" class="section-wrapper" index=0> 
+        <span class="glyphicon glyphicon-tower logo-small"></span>
+        <h4>STRATEGIES</h4>
         <div class="p-wrapper">
-          <p>Check available companies</p>
+          <p>Define your strategies</p>
         </div>
       </div>
 
@@ -18,11 +19,11 @@
 
     <div class="col-sm-2">
 
-      <div id="strategies_section_button" class="section-wrapper" index=1> 
-        <span class="glyphicon glyphicon-tower logo-small"></span>
-        <h4>STRATEGIES</h4>
+      <div id="companies_section_button" class="section-wrapper" index=1>
+        <span class="glyphicon glyphicon-usd logo-small"></span>
+        <h4>COMPANIES</h4>
         <div class="p-wrapper">
-          <p>Define your strategies</p>
+          <p>Check available companies</p>
         </div>
       </div>
 
@@ -59,16 +60,11 @@
 
 <div class="main-content">
 
-  <div id="companies_section companies" class="container-primary" > 
-    <div>
-      COMPANIES
-    </div>
-  </div>
-
   <div id="strategies_section" class="container-primary"> 
 
 
-    <div class="detailed-info text-center">
+    <div class="detailed-info text-center" style="position:relative">
+      <button id="companies_fold_button">Fold</button>
       <h2>Stock companies</h2>
     </div>
 
@@ -82,6 +78,7 @@
     </div>
     
     <div class="detailed-info text-center">
+      <button id="indexes_fold_button">Fold</button>
       <h2>Indexes</h2>
     </div>
 
@@ -98,6 +95,13 @@
     </div>
 
   </div>
+
+  <div id="companies_section companies" class="container-primary" > 
+    <div>
+      COMPANIES
+    </div>
+  </div>
+
 
   <div id="activity_section" class="container-primary"> 
     <div>
