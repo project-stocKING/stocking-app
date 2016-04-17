@@ -24,8 +24,10 @@ var companiesContent = [];
 
 var windowWidth = $(window).width();
 var companiesPerPage = Math.ceil(0.9*windowWidth/140) -1;
-companiesPerPage *= 3;
+companiesPerPage *= 2;
 
+var displayedCompaniesPages = [];
+var displayedCompaniesPagesCount = 10;
 var companiesCurrentPage = 0;
 var currentCompanyIndex = 0;
 
@@ -141,21 +143,6 @@ var createForm = function(json, targetDiv) {
       indexName: indexesContent[currentIndexIndex].indexName,
       parameters: data
     }
-    // console.log(JSON.stringify(postdata));
-
-    // $.post(serverUrl, {
-    //   data: JSON.stringify(postdata),
-    //   contentType: "application/json",
-    //   crossDomain: true,
-    //   dataType: "json"
-
-    // }).done(function(res) {
-    //   console.log(JSON.stringify(res, null, 2));
-    //   calculationResult = res;
-    //   displayResult();
-    // }).fail(function(res) {
-    //   console.log(JSON.stringify(res));
-    // });
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', serverUrl);
@@ -178,7 +165,7 @@ var windowResizeHandler = function() {
     console.log("WINDOW RESIZED!!!!");
     windowWidth = $(window).width();
     companiesPerPage = Math.ceil(0.9*windowWidth/140) -1;
-    companiesPerPage *= 3;
+    companiesPerPage *= 2;
     console.log("current company: ", currentCompanyIndex);
     companiesCurrentPage = Math.max(Math.ceil(currentCompanyIndex/companiesPerPage)-1, 0);
 
@@ -306,18 +293,25 @@ var indexesTileBehavior = function() {
 
 var companiesPaginationBehavior = function() {
   var pages = companiesContent.length/companiesPerPage;
+  if (pages < 2) return;
   if(pages * companiesPerPage < companiesContent.length) pages++;
-  console.log("For ", companiesContent.length,
-   "items there will be", pages, "pages");
+  // console.log("For ", companiesContent.length,
+   // "items there will be", pages, "pages");
   $("#companies_paginator").empty();
 
+  // var pagesStart = Math.max(0, currentCompanyIndex-4);
+  // displayedCompaniesPages = [];
+  // for(var i = pagesStart; i<pagesStart+displayedCompaniesPagesCount; i++) {
+  //   displayedCompaniesPages.push(i);
+  // }
+
   for(var i = 0; i<pages; i++) {
-    $("#companies_paginator").append("<div class='pagination-company-tile'><p>"+(i+1)+"</p></div>");
+    $("#companies_paginator").append("<div class='pagination-company-tile'><p>"+displayedCompaniesPages[i]+"</p></div>");
   }
   // setStrategiesPagination();
 
   $(".pagination-company-tile").on('click', function(event) {
-    companiesCurrentPage = $(this).index();
+    companiesCurrentPage = displayedCompaniesPages[$(this).index()];
     console.log("clicked on page: ", companiesCurrentPage);
     setCompaniesPagination();
 
@@ -344,6 +338,9 @@ var indexesPaginationBehavior = function() {
 var welcomeContentBehavior = function() {
   $(".container-primary").hide();
   $(".container-primary:first").show();
+  companiesContentBehavior();
+  indexesContentBehavior();
+
 
   $(".section-wrapper").on('click', function(event) {
     console.log("clicked on logo");
@@ -372,7 +369,8 @@ var companiesContentBehavior = function() {
     // console.log(JSON.stringify(result, null ,2));
     $("#companies_container").empty();
 
-    for(var i = 0; i<companiesPerPage; i++) {
+    var limiter = Math.min(companiesPerPage, companiesContent.length);
+    for(var i = 0; i<limiter; i++) {
       $("#companies_container").append("<div class='company-tile'><p>"+companiesContent[i]+"</p></div>" );
     }
 

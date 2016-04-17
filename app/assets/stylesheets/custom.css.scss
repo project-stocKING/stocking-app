@@ -441,7 +441,7 @@ footer .glyphicon {
 }
 
 .mainmenu-bar {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .main-content {
@@ -496,6 +496,7 @@ footer .glyphicon {
 .pagination-company-tile:hover, .pagination-company-tile.active {
     background-color: white;
     color: $primary-color;
+    numerek: 0;
 }
 
 .pagination-index-tile { 
