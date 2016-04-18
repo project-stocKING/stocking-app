@@ -201,6 +201,16 @@ var createForm = function(json, targetDiv) {
     }
     console.log(JSON.stringify(postdata, null, 2));
 
+    // var xhr3 = new XMLHttpRequest();
+    // xhr3.open('GET', '/activities');
+    // xhr3.setRequestHeader('Content-Type', 'application/json');
+    // xhr3.onreadystatechange = function() {
+    //   if (xhr.readyState == 4 && xhr.status == 200) {
+    //     console.log("JSOOOON");
+    //     console.log(xhr3.responseText);
+    //   }
+    // }
+
     var xhr = new XMLHttpRequest();
     xhr.open('POST', serverUrl);
     // xhr.setRequestHeader('Content-Type', 'application/json');
@@ -208,6 +218,28 @@ var createForm = function(json, targetDiv) {
         if (xhr.readyState == 4 && xhr.status == 200) {
           calculationResult = JSON.parse(xhr.responseText);
           console.log(JSON.stringify(calculationResult, null, 2));
+
+          var sendObj = {
+            request: postdata,
+            result: calculationResult[0].budgetAmount
+          }
+
+          var xhr2 = new XMLHttpRequest();
+          xhr2.open('POST', '/activities');
+          xhr2.setRequestHeader('Content-Type', 'application/json');
+          xhr2.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              // console.log(xhr2.responseText);
+            }
+          }
+          var obj = {
+            activity: {
+             content: sendObj,
+             user_id: 1 
+            }
+          };
+          xhr2.send(JSON.stringify(obj));
+
           displayResult();
         }
     }

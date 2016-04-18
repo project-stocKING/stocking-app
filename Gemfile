@@ -44,6 +44,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
+  gem 'quiet_assets'
   gem 'guard', :require => false
   gem 'guard-livereload', :require => false
   gem 'rack-livereload'

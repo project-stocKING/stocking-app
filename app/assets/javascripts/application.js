@@ -19,6 +19,7 @@
 //= require companies
 //= require indexes
 //= require calculations
+//= require activities
 //= require_tree .
 
 var windowWidth = $(window).width();
@@ -112,6 +113,8 @@ var welcomeContentBehavior = function() {
     if(section_id === "strategies_section_button") {
       companiesContentBehavior();
       indexesContentBehavior();
+    } else if (section_id === "activity_section_button") {
+      activityContentBehavior();
     }
 
     $(".container-primary").hide();
