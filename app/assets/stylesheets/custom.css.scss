@@ -51,6 +51,8 @@ body {
 
 .section-wrapper {
     cursor: pointer;
+    display: inline-block;
+    padding: 20px 50px;
 
     .logo-small {
         opacity: 0.5;
@@ -404,7 +406,7 @@ footer .glyphicon {
 }
 
 
-.index-tile { 
+.indicator-tile { 
     color: white;
     width: 140px;
     height: 140px;
@@ -430,8 +432,12 @@ footer .glyphicon {
     }
 
 }
-.index-tile:hover, .index-tile.active {
+.indicator-tile:hover, .indicator-tile.active {
     background-color: white;
+    color: $primary-color;
+}   
+
+tbody tr:hover {
     color: $primary-color;
 }
 
@@ -446,6 +452,24 @@ footer .glyphicon {
 
 .main-content {
     left: 0;
+}
+
+.activity-info {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    font-size: 12px;
+    font-family: Montserrat, sans-serif;
+
+    h2 { 
+        padding-bottom: 25px;
+    }
+
+
 }
 
 .detailed-info {
@@ -524,7 +548,7 @@ footer .glyphicon {
     numerek: 0;
 }
 
-.pagination-index-tile { 
+.pagination-indicator-tile { 
     color: white;
     width: 35px;
     height: 35px;
@@ -546,7 +570,7 @@ footer .glyphicon {
 
 }
 
-.pagination-index-tile:hover, .pagination-index-tile.active {
+.pagination-indicator-tile:hover, .pagination-indicator-tile.active {
     background-color: white;
     color: $primary-color;
 }

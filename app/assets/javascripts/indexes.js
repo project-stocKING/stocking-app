@@ -1,99 +1,99 @@
 
-var setIndexesPagination = function() {
-  var pages = indexesContent.length/indexesPerPage;
+var setIndicatorsPagination = function() {
+  var pages = indicatorsContent.length/indicatorsPerPage;
   if(pages < 2) return;
 
-  $(".pagination-index-tile").removeClass('active');
-  $(".pagination-index-tile").eq(indexesCurrentPage).addClass('active');
+  $(".pagination-indicator-tile").removeClass('active');
+  $(".pagination-indicator-tile").eq(indicatorsCurrentPage).addClass('active');
 
-  var paginationStart = indexesCurrentPage * indexesPerPage;
-  var paginationEnd = paginationStart + indexesPerPage;
-  if (paginationEnd >= indexesContent.length) paginationEnd = indexesContent.length - 1;
-  $("#indexes_container").empty();
+  var paginationStart = indicatorsCurrentPage * indicatorsPerPage;
+  var paginationEnd = paginationStart + indicatorsPerPage;
+  if (paginationEnd >= indicatorsContent.length) paginationEnd = indicatorsContent.length - 1;
+  $("#indicators_container").empty();
 
-  var limiter = Math.min(indexesPerPage, paginationEnd);
+  var limiter = Math.min(indicatorsPerPage, paginationEnd);
   for(var i = paginationStart; i<limiter; i++) {
-    $("#indexes_container").append("<div class='index-tile'><p>"+indexesContent[i].indexName+"</p></div>" );
+    $("#indicators_container").append("<div class='indicator-tile'><p>"+indicatorsContent[i].indicatorName+"</p></div>" );
   }
 
-  indexesTileBehavior();
+  indicatorsTileBehavior();
 }
 
-var indexesTileBehavior = function() {
+var indicatorsTileBehavior = function() {
 
-  if (currentIndexIndex >= indexesCurrentPage*indexesPerPage 
-    && currentIndexIndex < (indexesCurrentPage+1)*indexesPerPage ) {
-    $(".index-tile").eq(currentIndexIndex%indexesPerPage).addClass('active');
+  if (currentIndicatorIndex >= indicatorsCurrentPage*indicatorsPerPage 
+    && currentIndicatorIndex < (indicatorsCurrentPage+1)*indicatorsPerPage ) {
+    $(".indicator-tile").eq(currentIndicatorIndex%indicatorsPerPage).addClass('active');
   }
 
 
-  $(".index-tile").on('click', function(event) {
+  $(".indicator-tile").on('click', function(event) {
     // console.log("clicked on strategy-tile");
-    $(".index-tile").removeClass('active');
+    $(".indicator-tile").removeClass('active');
     $(this).addClass('active');
 
-    var indexIndex = indexesCurrentPage*indexesPerPage + $(this).index();
-    currentIndexIndex = indexIndex;
-    console.log("clicked on index-tile ", indexIndex);
+    var indicatorIndex = indicatorsCurrentPage*indicatorsPerPage + $(this).index();
+    currentIndicatorIndex = indicatorIndex;
+    console.log("clicked on index-tile ", indicatorIndex);
 
-    $("#index_info").empty();
-    $("#index_info").append("<div id='index_info_content'><h4>description</h4></div>");
-    $("#index_info_content").append(
-      "<p>"+"Name: "+indexesContent[indexIndex].indexName+"</p></div>");
+    $("#indicator_info").empty();
+    $("#indicator_info").append("<div id='indicator_info_content'><h4>description</h4></div>");
+    $("#indicator_info_content").append(
+      "<p>"+"Name: "+indicatorsContent[indicatorIndex].indicatorName+"</p></div>");
 
-    for(var i=0; i<indexesContent[indexIndex].parameters.length; i++) {
-      $("#index_info_content").append(
-        "<p>"+"Parameter: "+indexesContent[indexIndex].parameters[i]+"</p></div>");
+    for(var i=0; i<indicatorsContent[indicatorIndex].parameters.length; i++) {
+      $("#indicator_info_content").append(
+        "<p>"+"Parameter: "+indicatorsContent[indicatorIndex].parameters[i]+"</p></div>");
     }
-    createForm(indexesContent[indexIndex], "#index_info_content");
+    createForm(indicatorsContent[indicatorIndex], "#indicator_info_content");
   });
 }
 
-var indexesPaginationBehavior = function() {
-  var pages = indexesContent.length/indexesPerPage;
+var indicatorsPaginationBehavior = function() {
+  var pages = indicatorsContent.length/indicatorsPerPage;
   if(pages < 2) return;
-  if(pages * indexesPerPage < indexesContent.length) pages++;
-  $("#indexes_paginator").empty();
+  if(pages * indicatorsPerPage < indicatorsContent.length) pages++;
+  $("#indicators_paginator").empty();
 
   for(var i = 0; i<pages; i++) {
-    $("#indexes_paginator").append("<div class='pagination-index-tile'><p>"+(i+1)+"</p></div>");
+    $("#indicators_paginator").append("<div class='pagination-indicator-tile'><p>"+(i+1)+"</p></div>");
   }
 
-  $(".pagination-index-tile").on('click', function(event) {
-    indexesCurrentPage = $(this).index();
-    setIndexesPagination();
+  $(".pagination-indicator-tile").on('click', function(event) {
+    indicatorsCurrentPage = $(this).index();
+    setindicatorsPagination();
   });
 }
 
-var indexesContentBehavior = function() {
+var indicatorsContentBehavior = function() {
 
   // $.getJSON("http://156.17.41.238:5000/companies", function(result) {
   //   console.log(result);
   // });
 
-  $.getJSON("http://156.17.41.238:5001/indexes",
+  $.getJSON("http://156.17.41.238:5001/indicators",
     function(result) {
       console.log(result);
-      indexesContent = result;
-      $("#indexes_container").empty();
+      indicatorsContent = result;
+      $("#indicators_container").empty();
 
       console.log('about to display');
-      console.log(indexesContent.length);
-      var limiter = Math.min(indexesPerPage, indexesContent.length);
+      console.log(indicatorsContent.length);
+      var limiter = Math.min(indicatorsPerPage, indicatorsContent.length);
       for(var i = 0; i<limiter; i++) {
         console.log("i: ", i);
-        var index = indexesContent[i];
-        console.log(JSON.stringify(index));
-        $("#indexes_container").append("<div class='index-tile'><p>"+index.indexName+"</p></div>" );
+        var indicator = indicatorsContent[i];
+        console.log(JSON.stringify(indicator));
+        $("#indicators_container").append("<div class='indicator-tile'><p>"+indicator.indicatorName+"</p></div>" );
       }
       console.log('displayed');
-      indexesTileBehavior();
-      indexesPaginationBehavior();
-      $(".pagination-index-tile").removeClass('active');
-      $(".pagination-index-tile:first").addClass('active');
+      indicatorsTileBehavior();
+      indicatorsPaginationBehavior();
+      $(".pagination-indicator-tile").removeClass('active');
+      $(".pagination-indicator-tile:first").addClass('active');
 
-      $("#indexes_fold_button").click(function() {
-        $("#indexes_container").toggle();
+      $("#indicators_fold_button").click(function() {
+        $("#indicators_container").toggle();
       }); 
     });
 }
@@ -130,7 +130,7 @@ function getFormData($form){
 
 var createForm = function(json, targetDiv) {
   var form = $("<form/>", 
-                   { id: 'index_form' }
+                   { id: 'indicator_form' }
               );
 
   for(var key in json.parameters ) {
@@ -185,31 +185,22 @@ var createForm = function(json, targetDiv) {
     }
   }
 
-  $('#index_form').submit(function(event) {
+  $('#indicator_form').submit(function(event) {
     console.log('clicked on submit'); 
     event.preventDefault();
 
-    var serverUrl = 'http://156.17.41.238:5001/indexes'
+    var serverUrl = 'http://156.17.41.238:5001/indicators'
     // var serverUrl = 'http://httpbin.org/post';
     
-    var $form = $("#index_form");
+    var $form = $("#indicator_form");
     var data = getFormData($form);
     var postdata = {
       stockName: companiesContent[currentCompanyIndex],
-      indexName: indexesContent[currentIndexIndex].indexName,
+      indicatorName: indicatorsContent[currentIndicatorIndex].indicatorName,
       parameters: data
     }
     console.log(JSON.stringify(postdata, null, 2));
 
-    // var xhr3 = new XMLHttpRequest();
-    // xhr3.open('GET', '/activities');
-    // xhr3.setRequestHeader('Content-Type', 'application/json');
-    // xhr3.onreadystatechange = function() {
-    //   if (xhr.readyState == 4 && xhr.status == 200) {
-    //     console.log("JSOOOON");
-    //     console.log(xhr3.responseText);
-    //   }
-    // }
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', serverUrl);
@@ -219,9 +210,12 @@ var createForm = function(json, targetDiv) {
           calculationResult = JSON.parse(xhr.responseText);
           console.log(JSON.stringify(calculationResult, null, 2));
 
+          var now = (new Date()).toDateString();//Date.now();
+          // now = now.toDateString();
           var sendObj = {
             request: postdata,
-            result: calculationResult[0].budgetAmount
+            result: calculationResult[0].budgetAmount,
+            date: now
           }
 
           var xhr2 = new XMLHttpRequest();
@@ -234,7 +228,7 @@ var createForm = function(json, targetDiv) {
           }
           var obj = {
             activity: {
-             content: sendObj,
+             content: JSON.stringify(sendObj),
              user_id: 1 
             }
           };

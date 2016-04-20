@@ -32,10 +32,10 @@ var displayedCompaniesPagesCount = 10;
 var companiesCurrentPage = 0;
 var currentCompanyIndex = 0;
 
-var indexesContent = [];
-var indexesPerPage = companiesPerPage;
-var indexesCurrentPage = 0;
-var currentIndexIndex = 0;
+var indicatorsContent = [];
+var indicatorsPerPage = companiesPerPage;
+var indicatorsCurrentPage = 0;
+var currentIndicatorIndex = 0;
 
 var calculationResult = [];
 
@@ -87,11 +87,11 @@ var windowResizeHandler = function() {
     companiesPaginationBehavior();
     setCompaniesPagination();
 
-    indexesPerPage = companiesPerPage;
-    indexesCurrentPage = Math.max(Math.ceil(currentIndexIndex/indexesPerPage)-1, 0);
+    indicatorsPerPage = companiesPerPage;
+    indicatorsCurrentPage = Math.max(Math.ceil(currentIndicatorIndex/indicatorsPerPage)-1, 0);
 
-    indexesPaginationBehavior();
-    setIndexesPagination();
+    indicatorsPaginationBehavior();
+    setIndicatorsPagination();
 
   });
 }
@@ -100,7 +100,7 @@ var welcomeContentBehavior = function() {
   $(".container-primary").hide();
   $(".container-primary:first").show();
   companiesContentBehavior();
-  indexesContentBehavior();
+  indicatorsContentBehavior();
 
 
   $(".section-wrapper").on('click', function(event) {
@@ -112,7 +112,7 @@ var welcomeContentBehavior = function() {
 
     if(section_id === "strategies_section_button") {
       companiesContentBehavior();
-      indexesContentBehavior();
+      indicatorsContentBehavior();
     } else if (section_id === "activity_section_button") {
       activityContentBehavior();
     }

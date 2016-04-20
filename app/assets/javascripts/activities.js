@@ -2,45 +2,43 @@
 
 
 var activityContentBehavior = function () {
-	
-	$.getJSON("/activities.json",
-	 function(result) {
-	  console.log(JSON.stringify(result, null, 2));
-	  console.log("got result");
-	  // console.log(JSON.stringify(result, null ,2));
-	  $("#activity_container").empty();
-	  $("#activity_container").append("<div class='detailed-info'>" );
-	  for(var i = 0; i<result.length; i++ ) {
+  
+  $.getJSON("/activities.json",
+   function(result) {
+    console.log(JSON.stringify(result, null, 2));
+    console.log("got result");
+    $("#activity_container").empty();
 
-	  	var properties = result[i].content.split(', ');
-	  	var obj = {};
-	  	properties.forEach(function(property) {
-	  	    var tup = property.split(':');
-	  	    obj[tup[0]] = tup[1];
-	  	});
+    var div_str = "";
+    div_str += "<div class='container'>"
+     +"<h2>Activity log</h2>"        
+        +"<table class='table table-hover'>"
+          +"<thead>"
+             +"<tr>"
+              +"<th style='text-align:center'>Stock name</th>"
+              +"<th style='text-align:center'>Indicator name</th>"
+              +"<th style='text-align:center'>Budget</th>"
+              +"<th style='text-align:center'>Final result</th>"
+              +"<th style='text-align:center'>Date</th>"
+            +"</tr>"
+          +"</thead>"
+          +"<tbody>";
 
-	  	// var contentObj = JSON.parse(result[i].content);
-	  	$("#activity_container").append("<p>"+obj.result+"</p>");
-	  		
-	  }
-	  $("#activity_container").append("</div>" );
-	  // var obj = JSON.parse(JSON.stringify(result.))
-	  // var limiter = Math.min(companiesPerPage, companiesContent.length);
-	  // for(var i = 0; i<limiter; i++) {
-	    // $("#activity_container").append("<div class='company-tile'><p>"+companiesContent[i]+"</p></div>" );
-	    // $("#activity_container").append("<div><p>"+JSON.stringify(result)+"</p></div>" );
-	  
-	  // }
-
-	  // companiesTileBehavior();
-	  // companiesPaginationBehavior();
-	  // $(".pagination-company-tile").removeClass('active');
-	  // $(".pagination-company-tile:first").addClass('active');
-	  // // $("#companies_container").append('<iframe displasy=block width="420" height="315"src="https://www.youtube.com/embed/Osjohw3glPk"></iframe>');
-
-	  // $("#companies_fold_button").click(function() {
-	  //   $("#companies_container").toggle();
-	  // }); 
-	});
+    for(var i = 0; i<result.length; i++ ) {     
+      var contentObj = JSON.parse(result[i].content);
+      console.log("PARSED: ", JSON.stringify(contentObj, null, 2));
+      div_str += "<tr>";
+      div_str += "<td>"+contentObj.request.stockName+"</td>";
+      div_str += "<td>"+contentObj.request.indicatorName+"</td>";
+      div_str += "<td>"+contentObj.request.parameters.budget+"</td>";
+      div_str += "<td>"+contentObj.result+"</td>";
+      div_str += "<td>"+contentObj.date+"</td>";
+      div_str += "</tr>";
+    }
+    div_str += "</tbody></table></div>";
+    $("#activity_container").append(div_str);
+  });
 
 }
+
+
