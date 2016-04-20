@@ -65200,3 +65200,22 @@ Processing by ActivitiesController#index as JSON
   [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
   Rendered activities/index.json.jbuilder (3.1ms)
 Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-20 22:25:54 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (1.0ms)
+  Rendered welcome/index.html.erb within layouts/application (250.7ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 3575ms (Views: 3541.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-20 22:26:03 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[36mActivity Load (0.7ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+  Rendered activities/index.json.jbuilder (96.2ms)
+Completed 200 OK in 203ms (Views: 130.7ms | ActiveRecord: 1.2ms)
