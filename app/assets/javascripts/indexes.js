@@ -171,6 +171,23 @@ var createForm = function(json, targetDiv) {
 
   $(targetDiv).append(form);
 
+
+  var save_form = $("<form/>", 
+                   { id: 'save_form' }
+              );
+
+  save_form.append( 
+       $("<input>", 
+            { type:'submit',
+              id: 'form_save_button', 
+              value:'Save your strategy', 
+              style:'width:30%' }
+         )
+  );
+
+  $(targetDiv).append(save_form);
+
+
   for (var key in json.parameters) {
     if (json.parameters[key] === 'Date') {
       console.log("lets add date");
@@ -239,6 +256,45 @@ var createForm = function(json, targetDiv) {
     }
     xhr.send(JSON.stringify(postdata));
 
+
+
+
+  });
+
+  $('#save_form').submit(function(event) {
+    console.log("gonna save your strategy");
+    event.preventDefault();
+    var now = (new Date()).toDateString();//Date.now();
+
+    var $form = $("#indicator_form");
+    var data = getFormData($form);
+    var postdata = {
+      stockName: companiesContent[currentCompanyIndex],
+      indicatorName: indicatorsContent[currentIndicatorIndex].indicatorName,
+      parameters: data
+    }
+    // now = now.toDateString();
+    var sendObj = {
+      request: postdata,
+      date: now
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/strategies');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function() {
+      console.log(xhr.responseText);
+      // if (xhr.readyState == 4 && xhr.status == 200) {
+         
+      // }
+    }
+    var obj = {
+      strategy: {
+       content: JSON.stringify(sendObj),
+       user_id: 1 
+      }
+    };
+    xhr.send(JSON.stringify(obj));
 
   });
 }

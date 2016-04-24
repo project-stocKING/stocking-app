@@ -11,16 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417234604) do
+ActiveRecord::Schema.define(version: 20160424220626) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.string   "content"
+    t.json     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
   end
 
-  add_index "activities", ["user_id"], name: "index_activities_on_user_id"
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
+
+  create_table "strategies", force: :cascade do |t|
+    t.json     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "strategies", ["user_id"], name: "index_strategies_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.boolean  "admin",                  default: false, null: false
@@ -39,7 +51,9 @@ ActiveRecord::Schema.define(version: 20160417234604) do
     t.datetime "updated_at",                             null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "activities", "users"
+  add_foreign_key "strategies", "users"
 end

@@ -65219,3 +65219,1589 @@ Processing by ActivitiesController#index as JSON
   [1m[36mActivity Load (0.7ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
   Rendered activities/index.json.jbuilder (96.2ms)
 Completed 200 OK in 203ms (Views: 130.7ms | ActiveRecord: 1.2ms)
+  [1m[36m (22.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (7.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20160312232930)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (12.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "admin" boolean DEFAULT 'f' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "username" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.1ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (11.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160312232930"]]
+  [1m[36m (3.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateActivities (20160417234528)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "activities" ("id" serial primary key, "content" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160417234528"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddUserToActivities (20160417234604)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "activities" ADD "user_id" integer[0m
+  [1m[35m (11.2ms)[0m  CREATE  INDEX  "index_activities_on_user_id" ON "activities"  ("user_id")
+  [1m[36m (4.6ms)[0m  [1mALTER TABLE "activities" ADD CONSTRAINT "fk_rails_7e11bb717f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160417234604"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 20:27:49 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_not_signed.html.erb (1.4ms)
+  Rendered welcome/index.html.erb within layouts/application (164.5ms)
+  Rendered layouts/_shim.html.erb (1.9ms)
+  Rendered layouts/_header.html.erb (5.3ms)
+  Rendered layouts/_footer.html.erb (1.9ms)
+Completed 200 OK in 4286ms (Views: 4228.6ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 20:27:54 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_not_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 280ms (Views: 276.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-24 20:27:59 +0200
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"q5DO7qV9drCPsUgaYQzHmpk1DDTrVgzMCdAA1PBx6KedsBG5aSs7DXTduO0//WmRal/tTok1KVPxOA+P3Mm9Fg=="}
+  Rendered devise/shared/_links.html.erb (29.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (349.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 550ms (Views: 519.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-04-24 20:28:04 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ANk57ulgUNtOfqqmkMJbVMjR/zBMNg4knwNbz9gAJTM2+ea5JTYdZrUSWlHOM/VfO7seSi5VK7tn61SU9Lhwgg==", "user"=>{"email"=>"olek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "olek@gmail.com"]]
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.7ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ANk57ulgUNtOfqqmkMJbVMjR/zBMNg4knwNbz9gAJTM2+ea5JTYdZrUSWlHOM/VfO7seSi5VK7tn61SU9Lhwgg==", "user"=>{"email"=>"olek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (13.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.1ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 479ms (Views: 160.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-04-24 20:28:08 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JngN7tXAFhoynfEF0YEOI6FBQIMbL86snqaIyrCfyoYQWNK5GZZbp8nxAfKPcKAoUiuh+XlM6zNmToeRnCefNw==", "user"=>{"email"=>"olek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "olek@gmail.com"]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.9ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JngN7tXAFhoynfEF0YEOI6FBQIMbL86snqaIyrCfyoYQWNK5GZZbp8nxAfKPcKAoUiuh+XlM6zNmToeRnCefNw==", "user"=>{"email"=>"olek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (12.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 260ms (Views: 157.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-04-24 20:28:11 +0200
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (13.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (35.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 249ms (Views: 247.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-24 20:28:22 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DC9xIQ/gpi0KBfyj+4tC36+TkMLqdQ79XXeL4+6GUrU6D652w7brkPFpDFSleuzUXPlxuIgWK2Kln4S4wj4HBA==", "user"=>{"username"=>"olek", "email"=>"olek@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'olek@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "olek"], ["email", "olek@gmail.com"], ["encrypted_password", "$2a$10$derN.iWa6huibQylCN/Vx.Z7aJdg6RExagvs1Vs1RCF9UxYUSWEca"], ["created_at", "2016-04-24 18:28:22.587407"], ["updated_at", "2016-04-24 18:28:22.587407"]]
+  [1m[36m (10.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2016-04-24 18:28:22.604605"], ["current_sign_in_at", "2016-04-24 18:28:22.604605"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-04-24 18:28:22.606769"], ["id", 1]]
+  [1m[35m (12.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 293ms (ActiveRecord: 25.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 20:28:22 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (1.0ms)
+  Rendered welcome/index.html.erb within layouts/application (34.2ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 200ms (Views: 197.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/activities" for 127.0.0.1 at 2016-04-24 20:28:45 +0200
+Processing by ActivitiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150203\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"5000\"}},\"result\":20521.33,\"date\":\"Sun Apr 24 2016\"}", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "activities" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150203\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"5000\"}},\"result\":20521.33,\"date\":\"Sun Apr 24 2016\"}"], ["user_id", 1], ["created_at", "2016-04-24 18:28:45.262833"], ["updated_at", "2016-04-24 18:28:45.262833"]]
+  [1m[35m (10.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/activities/1
+Completed 302 Found in 32ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/activities/1" for 127.0.0.1 at 2016-04-24 20:28:45 +0200
+Processing by ActivitiesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered activities/show.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (10.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 486ms (Views: 435.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 20:28:52 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[36mActivity Load (0.9ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+  Rendered activities/index.json.jbuilder (55.6ms)
+Completed 200 OK in 73ms (Views: 70.8ms | ActiveRecord: 0.9ms)
+  [1m[36m (29.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (12.5ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20160312232930)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (37.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "admin" boolean DEFAULT 'f' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "username" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.5ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (3.0ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160312232930"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateActivities (20160417234528)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (21.1ms)[0m  [1mCREATE TABLE "activities" ("id" serial primary key, "content" json, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160417234528"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+Migrating to AddUserToActivities (20160417234604)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "activities" ADD "user_id" integer[0m
+  [1m[35m (43.3ms)[0m  CREATE  INDEX  "index_activities_on_user_id" ON "activities"  ("user_id")
+  [1m[36m (3.8ms)[0m  [1mALTER TABLE "activities" ADD CONSTRAINT "fk_rails_7e11bb717f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160417234604"]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (6.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 21:18:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_not_signed.html.erb (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (47.3ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 1219ms (Views: 1191.8ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-24 21:18:59 +0200
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"ez3eqHdQWw697UByAgttnEMk1t85iuaPMG7AN81kxHdNHQH/uwYWs0aBsIVc+sOXsE43pVvpwxDIhs9s4dyRxg=="}
+  Rendered devise/shared/_links.html.erb (30.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (121.0ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 328ms (Views: 300.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-04-24 21:19:03 +0200
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (14.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (36.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 321ms (Views: 318.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-24 21:19:12 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MFdUXzkSPyIfrqQHeA1Cb4RheXMjm7QCPIQ+hboBISoGd4sI9URyn+TCVPAm/OxkdwuYCUH4kZ3EbDHelrl0mw==", "user"=>{"username"=>"olek", "email"=>"olek@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'olek@gmail.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "olek"], ["email", "olek@gmail.com"], ["encrypted_password", "$2a$10$0QFkC3fBa/9wiRSsYZJPOOrjMOvMOiGPNgQlZ1PrVKmeXHlnAINFa"], ["created_at", "2016-04-24 19:19:12.952277"], ["updated_at", "2016-04-24 19:19:12.952277"]]
+  [1m[35m (949.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-04-24 19:19:13.908344"], ["current_sign_in_at", "2016-04-24 19:19:13.908344"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-04-24 19:19:13.910162"], ["id", 1]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1119ms (ActiveRecord: 955.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 21:19:13 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 155ms (Views: 152.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/activities" for 127.0.0.1 at 2016-04-24 21:19:30 +0200
+Processing by ActivitiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150406\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"5000\"}},\"result\":18534.81,\"date\":\"Sun Apr 24 2016\"}", "user_id"=>1}}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "activities" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150406\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"5000\"}},\"result\":18534.81,\"date\":\"Sun Apr 24 2016\"}"], ["user_id", 1], ["created_at", "2016-04-24 19:19:30.981543"], ["updated_at", "2016-04-24 19:19:30.981543"]]
+  [1m[36m (13.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/activities/1
+Completed 302 Found in 45ms (ActiveRecord: 18.3ms)
+
+
+Started GET "/activities/1" for 127.0.0.1 at 2016-04-24 21:19:31 +0200
+Processing by ActivitiesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mActivity Load (0.6ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered activities/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (6.9ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 210ms (Views: 200.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 21:19:35 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities"
+  Rendered activities/index.json.jbuilder (7.2ms)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/activities" for 127.0.0.1 at 2016-04-24 21:19:56 +0200
+Processing by ActivitiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150406\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"5000\"}},\"result\":18534.81,\"date\":\"Sun Apr 24 2016\"}", "user_id"=>1}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "activities" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150406\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"5000\"}},\"result\":18534.81,\"date\":\"Sun Apr 24 2016\"}"], ["user_id", 1], ["created_at", "2016-04-24 19:19:56.806837"], ["updated_at", "2016-04-24 19:19:56.806837"]]
+  [1m[36m (191.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/activities/2
+Completed 302 Found in 205ms (ActiveRecord: 192.5ms)
+
+
+Started GET "/activities/2" for 127.0.0.1 at 2016-04-24 21:19:57 +0200
+Processing by ActivitiesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[35mActivity Load (0.5ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered activities/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 231ms (Views: 227.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/activities" for 127.0.0.1 at 2016-04-24 21:19:59 +0200
+Processing by ActivitiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150406\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"50000\"}},\"result\":186206.73,\"date\":\"Sun Apr 24 2016\"}", "user_id"=>1}}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "activities" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150406\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"50000\"}},\"result\":186206.73,\"date\":\"Sun Apr 24 2016\"}"], ["user_id", 1], ["created_at", "2016-04-24 19:19:59.539450"], ["updated_at", "2016-04-24 19:19:59.539450"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/activities/3
+Completed 302 Found in 12ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/activities/3" for 127.0.0.1 at 2016-04-24 21:19:59 +0200
+Processing by ActivitiesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered activities/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 157ms (Views: 153.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 21:20:01 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+  Rendered activities/index.json.jbuilder (4.6ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 21:50:51 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities"
+  Rendered activities/index.json.jbuilder (16.8ms)
+Completed 200 OK in 35ms (Views: 25.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 21:55:17 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (26.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 3226ms (Views: 3221.4ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/activities" for 127.0.0.1 at 2016-04-24 21:56:33 +0200
+Processing by ActivitiesController#create as */*
+  Parameters: {"activity"=>{"content"=>{"request"=>{"stockName"=>"LPP", "indicatorName"=>"ISMA", "parameters"=>{"StartDate"=>"20150804", "endDate"=>"20160405", "period"=>"20", "budget"=>"5000"}}, "result"=>5000, "date"=>"Sun Apr 24 2016"}, "user_id"=>1}}
+Unpermitted parameter: content
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "activities" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2016-04-24 19:56:33.888453"], ["updated_at", "2016-04-24 19:56:33.888453"]]
+  [1m[35m (7.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/activities/4
+Completed 302 Found in 22ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/activities/4" for 127.0.0.1 at 2016-04-24 21:56:33 +0200
+Processing by ActivitiesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mActivity Load (1.1ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered activities/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 185ms (Views: 179.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 21:56:43 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+  Rendered activities/index.json.jbuilder (6.4ms)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (28.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (7.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20160312232930)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (33.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "admin" boolean DEFAULT 'f' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "username" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.3ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (3.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160312232930"]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateActivities (20160417234528)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (11.4ms)[0m  [1mCREATE TABLE "activities" ("id" serial primary key, "content" json, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160417234528"]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddUserToActivities (20160417234604)
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "activities" ADD "user_id" integer[0m
+  [1m[35m (3.5ms)[0m  CREATE  INDEX  "index_activities_on_user_id" ON "activities"  ("user_id")
+  [1m[36m (3.2ms)[0m  [1mALTER TABLE "activities" ADD CONSTRAINT "fk_rails_7e11bb717f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160417234604"]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 22:02:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (11.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_not_signed.html.erb (1.0ms)
+  Rendered welcome/index.html.erb within layouts/application (70.8ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1442ms (Views: 1403.8ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-24 22:02:06 +0200
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"UIvbCixLX4YhzRWH8WJTzEaHmlDYMEJ7rlm2KBwkfcZmqwRd4B0SO9qh5XCvk/3Hte17KrpTZ+RWsblzMJwodw=="}
+  Rendered devise/shared/_links.html.erb (27.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (112.2ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 367ms (Views: 327.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-04-24 22:02:10 +0200
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (16.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (39.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 196ms (Views: 193.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-24 22:02:18 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ULwUHlQZpd1hq94tY+TMiwbDPp3aCOzeB1NPW7a305pmnMtJmE/oYJrHLto9FWKA9anf57hryUH/u0AAmg+GKw==", "user"=>{"username"=>"olek", "email"=>"olek@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'olek@gmail.com' LIMIT 1
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "olek"], ["email", "olek@gmail.com"], ["encrypted_password", "$2a$10$815uryP0gfvFc.YO0QZQFubyAmTgr3wmpRHzGcd6ifwJjMCWz7ZzS"], ["created_at", "2016-04-24 20:02:18.983116"], ["updated_at", "2016-04-24 20:02:18.983116"]]
+  [1m[35m (22.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-04-24 20:02:19.013235"], ["current_sign_in_at", "2016-04-24 20:02:19.013235"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-04-24 20:02:19.014908"], ["id", 1]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 200ms (ActiveRecord: 28.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 22:02:19 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.8ms)
+  Rendered welcome/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 177ms (Views: 175.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/activities" for 127.0.0.1 at 2016-04-24 22:02:58 +0200
+Processing by ActivitiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"LPP\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150707\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"5000\"}},\"result\":5000,\"date\":\"Sun Apr 24 2016\"}", "user_id"=>1}}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "activities" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "{\"request\":{\"stockName\":\"LPP\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150707\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"5000\"}},\"result\":5000,\"date\":\"Sun Apr 24 2016\"}"], ["user_id", 1], ["created_at", "2016-04-24 20:02:58.159123"], ["updated_at", "2016-04-24 20:02:58.159123"]]
+  [1m[36m (60.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/activities/1
+Completed 302 Found in 85ms (ActiveRecord: 64.0ms)
+
+
+Started GET "/activities/1" for 127.0.0.1 at 2016-04-24 22:02:58 +0200
+Processing by ActivitiesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mActivity Load (0.6ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered activities/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (6.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 204ms (Views: 196.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 22:03:10 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities"
+  Rendered activities/index.json.jbuilder (6.6ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/activities/1.json" for 127.0.0.1 at 2016-04-24 22:04:13 +0200
+Processing by ActivitiesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mActivity Load (1.2ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered activities/show.json.jbuilder (3.2ms)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 22:04:40 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities"
+  Rendered activities/index.json.jbuilder (2.7ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 22:05:28 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 796ms (Views: 794.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 22:05:33 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[35mActivity Load (8.3ms)[0m  SELECT "activities".* FROM "activities"
+  Rendered activities/index.json.jbuilder (11.8ms)
+Completed 200 OK in 21ms (Views: 11.6ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/activities" for 127.0.0.1 at 2016-04-24 22:06:01 +0200
+Processing by ActivitiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150701\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"65000\"}},\"result\":77766.29,\"date\":\"Sun Apr 24 2016\"}", "user_id"=>1}}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "activities" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150701\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"65000\"}},\"result\":77766.29,\"date\":\"Sun Apr 24 2016\"}"], ["user_id", 1], ["created_at", "2016-04-24 20:06:01.082873"], ["updated_at", "2016-04-24 20:06:01.082873"]]
+  [1m[36m (14.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/activities/2
+Completed 302 Found in 27ms (ActiveRecord: 16.5ms)
+
+
+Started GET "/activities/2" for 127.0.0.1 at 2016-04-24 22:06:01 +0200
+Processing by ActivitiesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[35mActivity Load (0.6ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered activities/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 185ms (Views: 180.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 22:06:04 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities"
+  Rendered activities/index.json.jbuilder (4.6ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:41:17 +0200
+
+SyntaxError (/home/olek/workspace/stocking-app/app/models/user.rb:9: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/user.rb:9: syntax error, unexpected end-of-input, expecting keyword_end
+  config/routes.rb:5:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (78.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:41:38 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.5) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.5) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (65.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateStrategies (20160424212857)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (11.3ms)[0m  [1mCREATE TABLE "strategies" ("id" serial primary key, "content" json, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160424212857"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'strategies'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:42:01 +0200
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.3ms)
+  Rendered welcome/index.html.erb within layouts/application (34.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 14154ms (Views: 14149.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/activities" for 127.0.0.1 at 2016-04-24 23:42:33 +0200
+Processing by ActivitiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20151103\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"1000\"}},\"result\":1166.88,\"date\":\"Sun Apr 24 2016\"}", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "activities" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20151103\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"1000\"}},\"result\":1166.88,\"date\":\"Sun Apr 24 2016\"}"], ["user_id", 1], ["created_at", "2016-04-24 21:42:33.868504"], ["updated_at", "2016-04-24 21:42:33.868504"]]
+  [1m[35m (262.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/activities/3
+Completed 302 Found in 287ms (ActiveRecord: 266.6ms)
+
+
+Started GET "/activities/3" for 127.0.0.1 at 2016-04-24 23:42:34 +0200
+Processing by ActivitiesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered activities/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 185ms (Views: 180.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/activities" for 127.0.0.1 at 2016-04-24 23:42:38 +0200
+Processing by ActivitiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20151103\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"10000\"}},\"result\":11642.66,\"date\":\"Sun Apr 24 2016\"}", "user_id"=>1}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "activities" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20151103\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"10000\"}},\"result\":11642.66,\"date\":\"Sun Apr 24 2016\"}"], ["user_id", 1], ["created_at", "2016-04-24 21:42:38.762799"], ["updated_at", "2016-04-24 21:42:38.762799"]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/activities/4
+Completed 302 Found in 16ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/activities/4" for 127.0.0.1 at 2016-04-24 23:42:38 +0200
+Processing by ActivitiesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35mActivity Load (0.5ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered activities/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 177ms (Views: 173.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/activities.json" for 127.0.0.1 at 2016-04-24 23:42:41 +0200
+Processing by ActivitiesController#index as JSON
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities"
+  Rendered activities/index.json.jbuilder (7.0ms)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:44:26 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 660ms (Views: 658.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:44:45 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 170ms (Views: 168.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:46:37 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.3ms)
+  Rendered welcome/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 699ms (Views: 697.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:46:58 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 173ms (Views: 171.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:47:23 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 724ms (Views: 722.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:47:40 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 181ms (Views: 179.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:48:46 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 713ms (Views: 711.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:49:12 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 149ms (Views: 147.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/srategies" for 127.0.0.1 at 2016-04-24 23:49:24 +0200
+
+ActionController::RoutingError (No route matches [GET] "/srategies"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (71.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (253.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (80.3ms)
+  [1m[36m (9.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (12.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20160312232930)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (11.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "admin" boolean DEFAULT 'f' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "username" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.1ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (12.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160312232930"]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateActivities (20160417234528)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (12.2ms)[0m  [1mCREATE TABLE "activities" ("id" serial primary key, "content" json, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160417234528"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddUserToActivities (20160417234604)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "activities" ADD "user_id" integer[0m
+  [1m[35m (5.6ms)[0m  CREATE  INDEX  "index_activities_on_user_id" ON "activities"  ("user_id")
+  [1m[36m (3.8ms)[0m  [1mALTER TABLE "activities" ADD CONSTRAINT "fk_rails_7e11bb717f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160417234604"]]
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateStrategies (20160424212857)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "strategies" ("id" serial primary key, "content" json, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160424212857"]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'strategies'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (6.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/srategies" for 127.0.0.1 at 2016-04-24 23:50:37 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/srategies"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/olek/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (22.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (141.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (108.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (144.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:50:42 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (2.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_not_signed.html.erb (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (55.4ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 17001ms (Views: 16991.4ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:50:59 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_not_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 165ms (Views: 163.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-24 23:51:02 +0200
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"JHHBA7ss8yqLdP/oa/k2sxBJLTv13ngt5r7rpaaPg5YSUR5Ud3q+l3AYDx81CJi44yPMQZe9XbIeVuT+ijfWJw=="}
+  Rendered devise/shared/_links.html.erb (44.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (85.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 413ms (Views: 308.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-04-24 23:51:06 +0200
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (15.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (38.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 189ms (Views: 185.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-24 23:51:14 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rlir7u9e3x7j4Y7lDmRSh6EfQM4xRaFwz+J1Ug2HxsyYeHS5IwiSoxiNfhJQlfyMUnWhtFMmhO83CnoJIT+TfQ==", "user"=>{"username"=>"olek", "email"=>"olek@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'olek@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "olek"], ["email", "olek@gmail.com"], ["encrypted_password", "$2a$10$N6si5AIHFEv5YcV9Ztz5WuIWScWbRM38X/2ZDwTuxUO55iW.7blWe"], ["created_at", "2016-04-24 21:51:14.525677"], ["updated_at", "2016-04-24 21:51:14.525677"]]
+  [1m[36m (53.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2016-04-24 21:51:14.584931"], ["current_sign_in_at", "2016-04-24 21:51:14.584931"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-04-24 21:51:14.587246"], ["id", 1]]
+  [1m[35m (99.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 332ms (ActiveRecord: 156.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:51:14 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.9ms)
+  Rendered welcome/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 146ms (Views: 144.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:51:32 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (2.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 154ms (Views: 151.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/strategies" for 127.0.0.1 at 2016-04-24 23:51:40 +0200
+Processing by StrategiesController#index as HTML
+  [1m[36mStrategy Load (1.3ms)[0m  [1mSELECT "strategies".* FROM "strategies"[0m
+  Rendered strategies/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 170ms (Views: 154.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/strategies/1" for 127.0.0.1 at 2016-04-24 23:51:56 +0200
+Processing by StrategiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStrategy Load (0.6ms)[0m  [1mSELECT  "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 10ms (ActiveRecord: 2.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Strategy with 'id'=1):
+  app/controllers/strategies_controller.rb:67:in `set_strategy'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (79.8ms)
+
+
+Started GET "/strategies/1" for 127.0.0.1 at 2016-04-24 23:54:00 +0200
+Processing by StrategiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStrategy Load (0.5ms)[0m  SELECT  "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Strategy with 'id'=1):
+  app/controllers/strategies_controller.rb:67:in `set_strategy'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (75.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:54:10 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 730ms (Views: 727.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:54:27 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 250ms (Views: 248.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:57:16 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 864ms (Views: 861.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:58:30 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.2ms)
+  Rendered welcome/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 935ms (Views: 933.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:59:16 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 642ms (Views: 639.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:59:24 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 152ms (Views: 150.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-24 23:59:39 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (26.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 189ms (Views: 182.7ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/strategies" for 127.0.0.1 at 2016-04-24 23:59:58 +0200
+Processing by StrategiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20150602\",\"endDate\":\"20160405\",\"period\":\"20\",\"budget\":\"7000\"}},\"date\":\"Sun Apr 24 2016\"}", "user_id"=>1}, "strategy"=>{}}
+Completed 400 Bad Request in 3ms (ActiveRecord: 1.5ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  app/controllers/strategies_controller.rb:72:in `strategy_params'
+  app/controllers/strategies_controller.rb:27:in `create'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (63.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-25 00:01:04 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (26.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 185ms (Views: 180.7ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/strategies" for 127.0.0.1 at 2016-04-25 00:01:17 +0200
+Processing by StrategiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20160404\",\"endDate\":\"20160414\",\"period\":\"11\",\"budget\":\"11111\"}},\"date\":\"Mon Apr 25 2016\"}", "user_id"=>1}, "strategy"=>{}}
+Completed 400 Bad Request in 2ms (ActiveRecord: 1.5ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  app/controllers/strategies_controller.rb:72:in `strategy_params'
+  app/controllers/strategies_controller.rb:27:in `create'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (75.6ms)
+
+
+Started GET "/strategies" for 127.0.0.1 at 2016-04-25 00:01:33 +0200
+Processing by StrategiesController#index as HTML
+  [1m[36mStrategy Load (1.0ms)[0m  [1mSELECT "strategies".* FROM "strategies"[0m
+  Rendered strategies/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 174ms (Views: 170.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-25 00:02:17 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (31.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 192ms (Views: 186.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-25 00:02:17 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 160ms (Views: 157.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/strategies" for 127.0.0.1 at 2016-04-25 00:02:33 +0200
+Processing by StrategiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20160403\",\"endDate\":\"20160413\",\"period\":\"10\",\"budget\":\"5555\"}},\"date\":\"Mon Apr 25 2016\"}", "user_id"=>1}, "strategy"=>{}}
+Completed 400 Bad Request in 3ms (ActiveRecord: 1.1ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  app/controllers/strategies_controller.rb:73:in `strategy_params'
+  app/controllers/strategies_controller.rb:28:in `create'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.1ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (68.6ms)
+
+
+Started POST "/strategies" for 127.0.0.1 at 2016-04-25 00:02:37 +0200
+Processing by StrategiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20160403\",\"endDate\":\"20160413\",\"period\":\"10\",\"budget\":\"5555\"}},\"date\":\"Mon Apr 25 2016\"}", "user_id"=>1}, "strategy"=>{}}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  app/controllers/strategies_controller.rb:73:in `strategy_params'
+  app/controllers/strategies_controller.rb:28:in `create'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (3.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (3.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (85.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-25 00:03:17 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 830ms (Views: 826.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/strategies" for 127.0.0.1 at 2016-04-25 00:03:41 +0200
+Processing by StrategiesController#create as */*
+  Parameters: {"activity"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20160404\",\"endDate\":\"20160406\",\"period\":\"40\",\"budget\":\"5555\"}},\"date\":\"Mon Apr 25 2016\"}", "user_id"=>1}, "strategy"=>{}}
+Completed 400 Bad Request in 13ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  app/controllers/strategies_controller.rb:73:in `strategy_params'
+  app/controllers/strategies_controller.rb:28:in `create'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (70.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-25 00:05:02 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 773ms (Views: 771.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/strategies" for 127.0.0.1 at 2016-04-25 00:05:18 +0200
+Processing by StrategiesController#create as */*
+  Parameters: {"strategy"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20160404\",\"endDate\":\"20160413\",\"period\":\"40\",\"budget\":\"7777\"}},\"date\":\"Mon Apr 25 2016\"}", "user_id"=>1}}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.1ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'user_id' for Strategy.):
+  app/controllers/strategies_controller.rb:28:in `create'
+
+
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (33.7ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/olek/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (67.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserToStrategies (20160424220626)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "strategies" ADD "user_id" integer[0m
+  [1m[35m (3.8ms)[0m  CREATE  INDEX  "index_strategies_on_user_id" ON "strategies"  ("user_id")
+  [1m[36m (2.8ms)[0m  [1mALTER TABLE "strategies" ADD CONSTRAINT "fk_rails_c12716ca60"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160424220626"]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'strategies'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-25 00:06:58 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/_user_signed.html.erb (1.1ms)
+  Rendered welcome/index.html.erb within layouts/application (101.5ms)
+  Rendered layouts/_shim.html.erb (1.5ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 1325ms (Views: 1275.7ms | ActiveRecord: 28.2ms)
+
+
+Started POST "/strategies" for 127.0.0.1 at 2016-04-25 00:07:15 +0200
+Processing by StrategiesController#create as */*
+  Parameters: {"strategy"=>{"content"=>"{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20160403\",\"endDate\":\"20160405\",\"period\":\"10\",\"budget\":\"6000\"}},\"date\":\"Mon Apr 25 2016\"}", "user_id"=>1}}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "strategies" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "{\"request\":{\"stockName\":\"KGHM\",\"indicatorName\":\"ISMA\",\"parameters\":{\"StartDate\":\"20160403\",\"endDate\":\"20160405\",\"period\":\"10\",\"budget\":\"6000\"}},\"date\":\"Mon Apr 25 2016\"}"], ["user_id", 1], ["created_at", "2016-04-24 22:07:15.951608"], ["updated_at", "2016-04-24 22:07:15.951608"]]
+  [1m[36m (60.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/strategies/1
+Completed 302 Found in 94ms (ActiveRecord: 66.4ms)
+
+
+Started GET "/strategies/1" for 127.0.0.1 at 2016-04-25 00:07:16 +0200
+Processing by StrategiesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mStrategy Load (0.7ms)[0m  SELECT  "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered strategies/show.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (6.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 209ms (Views: 201.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/strategies" for 127.0.0.1 at 2016-04-25 00:07:26 +0200
+Processing by StrategiesController#index as HTML
+  [1m[35mStrategy Load (1.0ms)[0m  SELECT "strategies".* FROM "strategies"
+  Rendered strategies/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 163ms (Views: 158.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/strategies/1.json" for 127.0.0.1 at 2016-04-25 00:07:36 +0200
+Processing by StrategiesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mStrategy Load (0.7ms)[0m  SELECT  "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered strategies/show.json.jbuilder (4.8ms)
+Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 0.7ms)

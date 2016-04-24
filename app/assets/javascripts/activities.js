@@ -25,7 +25,7 @@ var activityContentBehavior = function () {
           +"<tbody>";
 
     for(var i = 0; i<result.length; i++ ) {     
-      var contentObj = JSON.parse(result[i].content);
+      var contentObj = result[i].content;//JSON.parse(result[i].content);
       console.log("PARSED: ", JSON.stringify(contentObj, null, 2));
       div_str += "<tr>";
       div_str += "<td>"+contentObj.request.stockName+"</td>";
