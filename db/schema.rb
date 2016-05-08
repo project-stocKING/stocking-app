@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160424220626) do
 
   create_table "strategies", force: :cascade do |t|
     t.json     "content"
+    t.string   "signal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"

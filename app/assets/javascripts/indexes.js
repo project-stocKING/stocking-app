@@ -98,8 +98,6 @@ var indicatorsContentBehavior = function() {
     });
 }
 
-
-
 var displayResult = function() {
 
   var amount = calculationResult[0].budgetAmount;
@@ -256,9 +254,6 @@ var createForm = function(json, targetDiv) {
     }
     xhr.send(JSON.stringify(postdata));
 
-
-
-
   });
 
   $('#save_form').submit(function(event) {
@@ -268,16 +263,11 @@ var createForm = function(json, targetDiv) {
 
     var $form = $("#indicator_form");
     var data = getFormData($form);
-    var postdata = {
+    var postdata = [{
       stockName: companiesContent[currentCompanyIndex],
       indicatorName: indicatorsContent[currentIndicatorIndex].indicatorName,
       parameters: data
-    }
-    // now = now.toDateString();
-    var sendObj = {
-      request: postdata,
-      date: now
-    }
+    }];
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/strategies');
@@ -287,11 +277,24 @@ var createForm = function(json, targetDiv) {
       // if (xhr.readyState == 4 && xhr.status == 200) {
          
       // }
+      
     }
+    delete postdata[0].parameters.StartDate;
+    delete postdata[0].parameters.endDate;
+    delete postdata[0].parameters.budget;
+
+    var strategyContent =  {
+      indicatorsWithParams: postdata,
+      signalsToPass: 1
+    }
+
+    console.log(JSON.stringify(strategyContent));
+
     var obj = {
       strategy: {
-       content: JSON.stringify(sendObj),
-       user_id: 1 
+       content: JSON.stringify(strategyContent),
+       user_id: 1,
+       signal: "sell"
       }
     };
     xhr.send(JSON.stringify(obj));
