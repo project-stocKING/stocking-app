@@ -26,9 +26,9 @@ var companiesContentBehavior = function() {
     $(".pagination-company-tile:first").addClass('active');
     // $("#companies_container").append('<iframe displasy=block width="420" height="315"src="https://www.youtube.com/embed/Osjohw3glPk"></iframe>');
 
-    $("#companies_fold_button").click(function() {
-      $("#companies_container").toggle();
-    }); 
+    // $("#companies_fold_button").click(function() {
+    //   $("#companies_container").toggle();
+    // }); 
   });
 
 }
@@ -95,10 +95,10 @@ var companiesTileBehavior = function() {
     console.log("clicked on company-tile ", companyIndex);
 
     $("#company_info").empty();
-    $("#company_info").append("<div id='company_info_content_folder'><button id='company_info_fold_button'>Fold</button></div>");
-    $("#company_info_fold_button").click(function() {
-      $("#company_info_content").toggle();
-    }); 
+    // $("#company_info").append("<div id='company_info_content_folder'><button id='company_info_fold_button'>Fold</button></div>");
+    // $("#company_info_fold_button").click(function() {
+    //   $("#company_info_content").toggle();
+    // }); 
 
     $("#company_info").append("<div id='company_info_content'><h4>description</h4></div>");
 

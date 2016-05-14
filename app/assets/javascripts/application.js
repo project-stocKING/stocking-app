@@ -20,6 +20,7 @@
 //= require indexes
 //= require calculations
 //= require activities
+//= require strategies
 //= require_tree .
 
 var windowWidth = $(window).width();
@@ -50,15 +51,15 @@ $(document).ready(function() {
     $.extend( $.datepicker.regional[ '' ] )
   );
 
-  if(document.getElementById("title")===null) {
-    document.getElementById("aboutTab").style.display = "none";
-    document.getElementById("servicesTab").style.display = "none";
-    console.log("on other page");
-  }else {
-    console.log("on main page")
-    document.getElementById("aboutTab").style.display = "inline";
-    document.getElementById("servicesTab").style.display = "inline";
-  }
+  // if(document.getElementById("title")===null) {
+  //   document.getElementById("aboutTab").style.display = "none";
+  //   document.getElementById("servicesTab").style.display = "none";
+  //   console.log("on other page");
+  // }else {
+  //   console.log("on main page")
+  //   document.getElementById("aboutTab").style.display = "inline";
+  //   document.getElementById("servicesTab").style.display = "inline";
+  // }
 
   window.onscroll = function(ev) {
     if(document.getElementById("title")===null) return;
@@ -111,10 +112,13 @@ var welcomeContentBehavior = function() {
     console.log("id: ", section_id);
 
     if(section_id === "strategies_section_button") {
-      companiesContentBehavior();
-      indicatorsContentBehavior();
+      // companiesContentBehavior();
+      strategiesContentBehavior();
     } else if (section_id === "activity_section_button") {
       activityContentBehavior();
+    } else if (section_id === "wizard_section_button") {
+      companiesContentBehavior();
+      indicatorsContentBehavior();
     }
 
     $(".container-primary").hide();

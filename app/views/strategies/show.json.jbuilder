@@ -1,1 +1,1 @@
-json.extract! @strategy, :id, :content, :created_at, :updated_at
+json.extract! @strategy, :id, :content, :signal, :created_at, :updated_at

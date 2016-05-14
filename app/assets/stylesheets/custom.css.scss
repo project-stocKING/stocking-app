@@ -293,13 +293,15 @@ footer .glyphicon {
 
 .general-list {
     text-align: center;
-    background-image: url(asset-path("stock-background-slim.jpg"));
+    /*background-image: url(asset-path("stock-background-slim.jpg"));*/
+    background-color: $primary-color;
     padding: 0;
     display: inline-block;
     position: fixed;
     width: 300px;
     left: 0;
-    top: 50px;
+    /*top: 50px;*/
+    top: 264px;
     height: 100%;
 
     text-transform: uppercase;
@@ -351,7 +353,7 @@ footer .glyphicon {
 }
 
 .user-content.companies {
-    display: inline-block;
+    display: block;
 }
 
 .container-primary {
@@ -481,6 +483,7 @@ tbody tr:hover {
     line-height: 1.5em;
     font-size: 12px;
     font-family: Montserrat, sans-serif;
+    height: 100%;
 
     div {
         padding: 5px 0;

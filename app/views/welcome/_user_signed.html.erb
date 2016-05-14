@@ -1,36 +1,27 @@
 <div id="services" class="mainmenu-bar text-center">
 
-  <div id="strategies_section_button" class="section-wrapper" index=0> 
+  <div id="wizard_section_button" class="section-wrapper" index=0>
+    <span class="glyphicon glyphicon-usd logo-small"></span>
+    <h4>WIZARD</h4>
+    <div class="p-wrapper">
+      <p>Define your strategies and calculations</p>
+    </div>
+  </div>
+
+  <div id="strategies_section_button" class="section-wrapper" index=1> 
     <span class="glyphicon glyphicon-tower logo-small"></span>
     <h4>STRATEGIES</h4>
     <div class="p-wrapper">
-      <p>Define your strategies</p>
+      <p>Check your strategies</p>
     </div>
   </div>
 
-
-  <div id="companies_section_button" class="section-wrapper" index=1>
-    <span class="glyphicon glyphicon-usd logo-small"></span>
-    <h4>COMPANIES</h4>
-    <div class="p-wrapper">
-      <p>Check available companies</p>
-    </div>
-  </div>
 
   <div id="activity_section_button" class="section-wrapper" index=2> 
     <span class="glyphicon glyphicon-signal logo-small"></span>
-    <h4>ACTIVITY LOG</h4>
+    <h4>CALCULATIONS LOG</h4>
     <div class="p-wrapper">
       <p>Check your results</p>
-    </div>
-  </div>
-
-
-  <div id="account_section_button" class="section-wrapper" index=3> 
-    <span class="glyphicon glyphicon-user logo-small"></span>
-    <h4>ACCOUNT DETAILS</h4>
-    <div class="p-wrapper">
-      <p>Manage your account</p>
     </div>
   </div>
 
@@ -38,45 +29,74 @@
 
 <div class="main-content">
 
-  <div id="strategies_section" class="container-primary"> 
-
-
-    <div class="detailed-info text-center" style="position:relative">
-      <button id="companies_fold_button">Fold</button>
-      <h2>Stock companies</h2>
-    </div>
-
-    <div id="companies_container" class="content-list">
-    </div>
-
-    <div id="companies_paginator" class="content-list">
-    </div>
-
-    <div id="company_info" class="detailed-info text-center">
-    </div>
-    
-    <div class="detailed-info text-center">
-      <button id="indicators_fold_button">Fold</button>
-      <h2>Indicators</h2>
-    </div>
-
-    <div id="indicators_container" class="content-list">
-    </div>
-
-    <div id="indicators_paginator" class="content-list">
-    </div>
-
-    <div id="indicator_info" class="detailed-info text-center">
-    </div>
-
-    <div id="result_info" class="detailed-info text-center">
-    </div>
-
-  </div>
-
   <div id="companies_section companies" class="container-primary" > 
     <div>
-      COMPANIES
+
+        <div class="general-list">
+          <ul>
+            <li id="choose_company_button">1. Choose company</li>
+            <li id="choose_indicator_button">2. Choose indicator</li>
+            <li id="add_parameters_button">3. Add parameters</li>
+            <li id="results_button">4. Check your results</li>
+          </ul>
+        </div>  
+
+        <div class="user-content companies" id="companies_chooser">
+
+            <div class="detailed-info text-center" style="position:relative">
+              <!-- <button id="companies_fold_button">Fold</button> -->
+              <h2>Stock companies</h2>
+            </div>
+
+            <div id="companies_container" class="content-list">
+            </div>
+
+            <div id="companies_paginator" class="content-list">
+            </div>
+
+            <div id="company_info" class="detailed-info text-center">
+            </div>
+
+        </div>
+
+        <div class="user-content" id="indicators_chooser">
+
+         <div class="detailed-info text-center">
+           <h2>Indicators</h2>
+         </div>
+
+         <div id="indicators_container" class="content-list">
+         </div>
+
+         <div id="indicators_paginator" class="content-list">
+         </div>
+
+        </div>
+
+        <div class="user-content" id="parameters_chooser">
+
+         <div class="detailed-info text-center">
+          <h2>Parameters</h2>
+         </div>
+          
+         <div id="indicator_info" class="detailed-info text-center">
+          Choose your indicator first!
+         </div>
+
+        </div>
+
+        <div class="user-content" id="results_viewer">
+          <div id="result_info" class="detailed-info text-center">
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <div id="strategies_section" class="container-primary"> 
+    <div>
+      <div id="strategy_container" class="activity-info"> 
+      </div>
     </div>
   </div>
 
@@ -85,12 +105,6 @@
     <div>
       <div id="activity_container" class="activity-info"> 
       </div>
-    </div>
-  </div>
-
-  <div id="account_section" class="container-primary"> 
-    <div>
-      ACCOUNT
     </div>
   </div>
 
