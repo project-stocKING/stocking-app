@@ -297,12 +297,12 @@ footer .glyphicon {
     background-color: $primary-color;
     padding: 0;
     display: inline-block;
-    position: fixed;
     width: 300px;
     left: 0;
     /*top: 50px;*/
     top: 264px;
     height: 100%;
+    float: left;
 
     text-transform: uppercase;
     font-family: Montserrat, sans-serif !important;
@@ -454,6 +454,7 @@ tbody tr:hover {
 
 .main-content {
     left: 0;
+    background-color: #003D6F;
 }
 
 .activity-info {
