@@ -1,10 +1,16 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  respond_to :json
 
   # GET /activities
   # GET /activities.json
   def index
     @activities = Activity.all
+  end
+
+  def personalized
+    @activities = current_user.activities if current_user
+    render :index
   end
 
   # GET /activities/1

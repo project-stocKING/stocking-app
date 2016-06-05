@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :strategies
-  resources :activities
+  resources :strategies do
+    get :personalized, on: :collection
+  end
+  resources :activities do 
+    get :personalized, on: :collection
+  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { registrations: "registrations" }
   # The priority is based upon order of creation: first created -> highest priority.

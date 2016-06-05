@@ -1,7 +1,7 @@
 
 var strategiesContentBehavior = function () {
   
-  $.getJSON("/strategies.json",
+  $.getJSON("/strategies/personalized",
    function(result) {
     console.log(JSON.stringify(result, null, 2));
     console.log("got result");

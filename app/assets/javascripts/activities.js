@@ -1,7 +1,7 @@
 
 var activityContentBehavior = function () {
   
-  $.getJSON("/activities.json",
+  $.getJSON("/activities/personalized",
    function(result) {
     console.log(JSON.stringify(result, null, 2));
     console.log("got result");
@@ -9,7 +9,7 @@ var activityContentBehavior = function () {
 
     var div_str = "";
     div_str += "<div class='container'>"
-     +"<h2>Activity log</h2>"        
+     +"<h2>Calculations log</h2>"        
         +"<table class='table table-hover'>"
           +"<thead>"
              +"<tr>"

@@ -1,5 +1,6 @@
 class StrategiesController < ApplicationController
   before_action :set_strategy, only: [:show, :edit, :update, :destroy]
+  respond_to :json
 
   # GET /strategies
   # GET /strategies.json
@@ -10,6 +11,11 @@ class StrategiesController < ApplicationController
   # GET /strategies/1
   # GET /strategies/1.json
   def show
+  end
+
+  def personalized
+    @strategies = current_user.strategies if current_user
+    render :index
   end
 
   # GET /strategies/new

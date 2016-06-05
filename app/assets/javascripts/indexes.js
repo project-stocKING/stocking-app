@@ -71,7 +71,7 @@ var indicatorsContentBehavior = function() {
   //   console.log(result);
   // });
 
-  $.getJSON("http://156.17.41.238:5001/indicators",
+  $.getJSON("http://156.17.41.238:5001/indexes",
     function(result) {
       console.log(result);
       indicatorsContent = result;
@@ -204,7 +204,7 @@ var createForm = function(json, targetDiv) {
     console.log('clicked on submit'); 
     event.preventDefault();
 
-    var serverUrl = 'http://156.17.41.238:5001/indicators'
+    var serverUrl = 'http://156.17.41.238:5001/indexes'
     // var serverUrl = 'http://httpbin.org/post';
     
     var $form = $("#indicator_form");
@@ -244,7 +244,7 @@ var createForm = function(json, targetDiv) {
           var obj = {
             activity: {
              content: JSON.stringify(sendObj),
-             user_id: 1 
+             user_id: gon.user_id 
             }
           };
           xhr2.send(JSON.stringify(obj));
@@ -293,7 +293,7 @@ var createForm = function(json, targetDiv) {
     var obj = {
       strategy: {
        content: JSON.stringify(strategyContent),
-       user_id: 1,
+       user_id: gon.user_id,
        signal: "sell"
       }
     };
